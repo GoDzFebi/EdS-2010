@@ -5,6 +5,7 @@
     position: fixed;
     text-align: center;
     width: 100%;
+    padding-top: 100px;
     left: 0;
     bottom: 0;
 } */
@@ -239,9 +240,9 @@
 }
 
 
-/* .nav-item:hover {
+.nav-item:hover {
     color: gray;
-} */
+} 
 
 
 /* categorie */
@@ -356,3 +357,4 @@
 .descrizionesito p {
     color: #7d8285;
 }
+
