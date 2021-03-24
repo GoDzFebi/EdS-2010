@@ -239,10 +239,9 @@
     text-shadow: 2px 2px 4px rgb(164, 151, 151);
 }
 
-
 .nav-item:hover {
     color: gray;
-} 
+}
 
 
 /* categorie */
@@ -250,7 +249,7 @@
 .features-clean {
     color: #313437;
     background-color: #fff;
-    margin-top: 250px;
+    margin-top: 100px;
     padding-bottom: 30px;
 }
 
@@ -331,7 +330,8 @@
 
 /* descrizione sito */
 
-.descrizionesito {
+
+/* .descrizionesito {
     color: #313437;
     background-color: #fff;
     margin-top: 150px;
@@ -356,5 +356,23 @@
 
 .descrizionesito p {
     color: #7d8285;
+} */
+
+
+/* carosello */
+
+.carousel-item {
+    padding-top: 100px;
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
+.c-image {
+    width: 100%;
+    height: auto;
+}

@@ -29,16 +29,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="Index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="PHP - HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Portfolio</a>
+            <a class="nav-link" href="PHP - HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="PHP - HTML/Login.php">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -50,10 +50,56 @@
 
   <!-- descrizione sito -->
 
-  <div class="descrizionesito">
+    <!-- <div class="descrizionesito">
     <h1 class="text-center">Presentazione Sito</h1>
-    <p class="text-center">descrizione sito </p>
+  </div> -->
+
+  <!-- carosello -->
+
+  <header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active">
+      <img class="c-image" src="Image/computer1.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Ottimo Servizio Clienti</h2>
+          <p class="lead">Raccogliamo Ticket.</p>
+        </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item">
+      <img class="c-image" src="Image/tvrepair.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Ottimi Operatori</h2>
+          <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item">
+      <img class="c-image" src="Image/riparatelefono1.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Ripariamo di Tutto</h2>
+          <p class="lead">Ripariamo tutto, non solo cellulari</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
   </div>
+</header>
+
   <!-- categorie -->
 
   <div class="features-clean">
@@ -63,34 +109,88 @@
       </div>
       <div class="row features">
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/batteriaicon.png"></img>
-          <h3 class="name">Batteria</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Batteria</h3>
+          <p class="description">Batteria dura poco, problemi a caricare il dispositivo, il dispositivo non si carica, batteria gonfia, batteria scalda troppo...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/chiamateicon.png"></img>
-          <h3 class="name">Chiamate</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Chiamate</h3>
+          <p class="description">Durante le chiamate non si sente l'audio o il destinatario non sente, problemi ad effettuare chiamate, problemi a ricevere telefonate...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/cameraicon.png"></img>
-          <h3 class="name">Fotocamera</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Fotocamera</h3>
+          <p class="description">La fotocamera non funziona, le foto sono sfocate, le foto sono nere, la fotocamera è rotta, il flash non funziona, non si vedono foto...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/wifiicon.png"></img>
-          <h3 class="name">Connessioni WiFi</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Connessioni WiFi</h3>
+          <p class="description">Il dispositivo non rileva il wifi, la connessione è lenta, il dispositivo non riesce a connetersi, il dispositivo non funziona con wifi...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/appicon.png"></img>
-          <h3 class="name">Applicazioni</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Applicazioni</h3>
+          <p class="description">La app non si apre, l'app fa crashare il dispositivo, l'app non si installa, l'app blocca il telefono, l'app richiede permessi strani...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/hardwareicon.png"></img>
-          <h3 class="name">Hardware</h3>
-          <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
+          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Hardware</h3>
+          <p class="description">Il dispositivo ha poca ram, la gpu non regge certe applicazioni, la cpu si surriscalda troppo, problemi alla batteria, i tasti sono rotti...</p>
         </div>
       </div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- faq -->
+  <div class="container py-3">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="accordion" id="faqExample">
+                <div class="card">
+                    <div class="card-header p-2" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Q: Perchè il telefono non si accende?
+                            </button>
+                          </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                        <div class="card-body">
+                            <b>Risposta:</b>Prova a metterlo in carica, potrebbe essere scarico.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingTwo">
+                        <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Q: La batteria è gonfia, perchè?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                        <div class="card-body">
+                            <b>Risposta:</b> La batteria potrebbe essere vecchia e troppo utilizzata, va cambiata.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Q: La tv non si spegne.
+                            </button>
+                          </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                        <div class="card-body">
+                            <b>Risposta:</b> stacca la spina.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
   <!-- footer -->
   <footer class="site-footer">
@@ -102,30 +202,18 @@
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <h6>Categorie Principali</h6>
+          <h6>Contatti</h6>
           <ul class="footer-links">
-            <li><a href="">Accensione e spegnimento</a></li>
-            <li><a href="">Aggiornamenti software</a></li>
-            <li><a href="">Applicazioni</a></li>
-            <li><a href="">Backup e ripristino</a></li>
-            <li><a href="">Batteria</a></li>
-            <li><a href="">Bluetooth</a></li>
-            <li><a href="">Chiamate</a></li>
-            <li><a href="">Aiuto e supporto sull’utilizzo</a></li>
+            <li><a>Via Bozzini 13</a></li>
+            <li><a>+39 389 579 1764</a></li>
+            <li><a>ticketriparazione@gmail.com</a></li>
           </ul>
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <h6>:</h6>
+          <h6>Nostri siti web</h6>
           <ul class="footer-links">
-            <li><a href="">Connessioni WiFi</a></li>
-            <li><a href="">File</a></li>
-            <li><a href="">Fotocamera</a></li>
-            <li><a href="">Hardware</a></li>
-            <li><a href="">Impostazioni</a></li>
-            <li><a href="">Messaggi</a></li>
-            <li><a href="">Problemi audio</a></li>
-            <li><a href="">Prodotto bloccato</a></li>
+            <li><a href="">www.supportish.com</a></li>
           </ul>
         </div>
       </div>
