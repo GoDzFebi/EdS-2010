@@ -246,6 +246,14 @@
 
 /* categorie */
 
+.btn{
+    text-align: center;
+    font-weight: bold;
+    color: inherit;
+    font-size: 17px;
+
+}
+
 .features-clean {
     color: #313437;
     background-color: #fff;
@@ -376,3 +384,13 @@
     width: 100%;
     height: auto;
 }
+
+/* faq homepage*/
+.faqtitle{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+

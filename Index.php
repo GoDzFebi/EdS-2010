@@ -32,16 +32,16 @@
             <a class="nav-link" href="Index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP - HTML/CronologiaTicket.php">Miei Ticket</a>
+            <a class="nav-link" href="PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP - HTML/InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP - HTML/Login.php">Login</a>
+            <a class="nav-link" href="PHP-HTML/Login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="PHP-HTML/FAQ.php">FAQ</a>
           </li>
         </ul>
       </div>
@@ -109,27 +109,27 @@
       </div>
       <div class="row features">
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/batteriaicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Batteria</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Batteria</h3>
           <p class="description">Batteria dura poco, problemi a caricare il dispositivo, il dispositivo non si carica, batteria gonfia, batteria scalda troppo...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/chiamateicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Chiamate</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Chiamate</h3>
           <p class="description">Durante le chiamate non si sente l'audio o il destinatario non sente, problemi ad effettuare chiamate, problemi a ricevere telefonate...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/cameraicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Fotocamera</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Fotocamera</h3>
           <p class="description">La fotocamera non funziona, le foto sono sfocate, le foto sono nere, la fotocamera è rotta, il flash non funziona, non si vedono foto...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/wifiicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Connessioni WiFi</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Connessioni WiFi</h3>
           <p class="description">Il dispositivo non rileva il wifi, la connessione è lenta, il dispositivo non riesce a connetersi, il dispositivo non funziona con wifi...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/appicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Applicazioni</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Applicazioni</h3>
           <p class="description">La app non si apre, l'app fa crashare il dispositivo, l'app non si installa, l'app blocca il telefono, l'app richiede permessi strani...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/hardwareicon.png"></img>
-          <h3 class="name" href="PHP - HTML/InserimentoTicket.php">Hardware</h3>
+          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Hardware</h3>
           <p class="description">Il dispositivo ha poca ram, la gpu non regge certe applicazioni, la cpu si surriscalda troppo, problemi alla batteria, i tasti sono rotti...</p>
         </div>
       </div>
@@ -139,6 +139,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
   <!-- faq -->
+
+  <h2 class="faqtitle">Domande Frequenti</h2>
   <div class="container py-3">
     <div class="row">
         <div class="col-10 mx-auto">
@@ -154,7 +156,7 @@
 
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
                         <div class="card-body">
-                            <b>Risposta:</b>Prova a metterlo in carica, potrebbe essere scarico.
+                            <b>Risposta:</b> Prova a metterlo in carica, potrebbe essere scarico.
                         </div>
                     </div>
                 </div>
