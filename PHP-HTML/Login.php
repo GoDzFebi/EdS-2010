@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
 <!-- navbar -->
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -57,7 +58,9 @@
       <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <button id="loginButton" type="submit" name="submit">Accedi</button>
+
     <p><b><a href="../PHP-HTML/Registrazione.php">Non hai un account? Registrati</a></b></p>
+
     
   </form>
 </div>
