@@ -14,40 +14,43 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <div class="container">
-  <a href="#" class="navbar-brand">
-        <img src="../Image/LogoSito.png">     
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img class="logo" src="../Image/LogoSito.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../Index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="PHP-HTML/Login.php">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 <div  id="containerLogin">
-  <h3 style="color:rgb(16, 69, 184);">Accedi</h3>
-  <form action="#" method="POST">
+  <h3 style="color:rgb(255, 255, 255);">Accedi</h3>
+  <form action="../PHP-HTML/Login.php" method="POST">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="username" name="user">
     </div>
@@ -55,7 +58,9 @@
       <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <button id="loginButton" type="submit" name="submit">Accedi</button>
-    <p><b><a href="#">Non hai un account? Registrati</a></b></p>
+
+    <p><b><a href="../PHP-HTML/Registrazione.php">Non hai un account? Registrati</a></b></p>
+
     
   </form>
 </div>
