@@ -43,11 +43,11 @@ p{
     margin-top: 50px;
     color:rgb(16, 69, 184);
 }
-a{
+#register{
     text-decoration: none;
     color:rgb(255, 255, 255);
 }
-a:hover{
+#register:hover{
     text-decoration: underline;
     color:rgb(255, 255, 255);
 }

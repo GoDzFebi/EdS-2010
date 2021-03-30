@@ -14,9 +14,9 @@
 </head>
 
 <body>
-<!-- navbar -->
+ <!-- navbar -->
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a href="#" class="navbar-brand">
         <img class="logo" src="../Image/LogoSito.png">
@@ -31,16 +31,13 @@
             <a class="nav-link" href="../Index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/Login.php">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
           </li>
         </ul>
       </div>
@@ -57,7 +54,7 @@
       <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <button id="loginButton" type="submit" name="submit">Accedi</button>
-    <p><b><a href="../PHP-HTML/Registrazione.php">Non hai un account? Registrati</a></b></p>
+    <p><b><a id="register" href="../PHP-HTML/Registrazione.php">Non hai un account? Registrati</a></b></p>
     
   </form>
 </div>
