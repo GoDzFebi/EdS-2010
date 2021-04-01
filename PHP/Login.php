@@ -13,7 +13,10 @@ $result=FindUtente($password, $username);
 
 
 if($result){
-    
+    session_start();
+    $_SESSION['pwd'] = $hash;
+    echo( $_SESSION['pwd']);
+    header("Location: ../PHP-HTML/CronologiaTicket.php");
     
 }
 else {
