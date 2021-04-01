@@ -47,7 +47,7 @@
 
 <div  id="containerLogin">
   <h3 style="color:rgb(255, 255, 255);">Accedi</h3>
-  <form action="../PHP-HTML/Login.php" method="POST">
+  <form action="../PHP/Login.php" method="POST">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="username" name="user">
     </div>
