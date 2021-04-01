@@ -13,7 +13,7 @@
     <link href="../CSS/Stylesheet.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body style="background-image: url('../image/login.png');"> 
 
 <!-- navbar -->
 
@@ -47,7 +47,7 @@
 
 <div  id="containerLogin">
   <h3 style="color:rgb(255, 255, 255);">Accedi</h3>
-  <form action="../PHP-HTML/Login.php" method="POST">
+  <form action="CronologiaTicket.php" method="POST">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="username" name="user">
     </div>
@@ -55,9 +55,8 @@
       <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <button id="loginButton" type="submit" name="submit">Accedi</button>
-    <p><b><a id="register" href="../PHP-HTML/Registrazione.php">Non hai un account? Registrati</a></b></p>
-    
-  </form>
+    <p><b><a id="register" href="Registrazione.php">Non hai un account? Registrati</a></b></p>
+ </form>
 </div>
 
 <!-- <footer class="site-footer">
