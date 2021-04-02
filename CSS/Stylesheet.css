@@ -9,6 +9,7 @@
     left: 0;
     bottom: 0;
 } */
+
 #containerLogin {
     text-align: center;
     width: 430px;
@@ -19,37 +20,44 @@
     background-color: rgb(29, 28, 28);
     border-radius: 20px;
 }
-.form-group{
+
+.form-group {
     margin: auto;
     padding: 40px;
     width: 370px;
 }
-#loginButton{
-    font-size:24px;
+
+#loginButton {
+    font-size: 24px;
     border-radius: 12px;
     border: 2px solid rgb(13, 47, 197);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 0.6;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-#loginButton:hover{
-    font-size:24px;
+
+#loginButton:hover {
+    font-size: 24px;
     border-radius: 12px;
-    border: 2px solid rgb(16, 69, 184);;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 2px solid rgb(16, 69, 184);
+    ;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 1;
 }
-p{
+
+p {
     margin-top: 50px;
-    color:rgb(16, 69, 184);
+    color: rgb(16, 69, 184);
 }
-#register{
+
+#register {
     text-decoration: none;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
-#register:hover{
+
+#register:hover {
     text-decoration: underline;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .site-footer {
@@ -336,12 +344,11 @@ a:hover {
 
 /* categorie */
 
-.btn{
+.btn {
     text-align: center;
     font-weight: bold;
     color: inherit;
     font-size: 17px;
-
 }
 
 .features-clean {
@@ -460,7 +467,6 @@ a:hover {
 /* carosello */
 
 .carousel-item {
-    padding-top: 100px;
     height: 100vh;
     min-height: 350px;
     background: no-repeat center center scroll;
@@ -475,12 +481,13 @@ a:hover {
     height: auto;
 }
 
+
 /* faq homepage*/
-.faqtitle{
+
+.faqtitle {
     text-align: center;
     font-weight: bold;
     margin-bottom: 40px;
     padding-top: 40px;
     color: inherit;
 }
-
