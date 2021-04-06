@@ -48,12 +48,11 @@
 
     <!-- FAQ -->
     <div class="container-fluid">
-        <!-- Row -->
         <div class="row">
             <div class="col-xl-12 pa-0">
                 <div class="faq-search-wrap bg-teal-light-3">
                     <div class="container">
-                        <h1 class="display-5 text-white mb-20">Ask a question or browse by category below.</h1>
+                        <h1 class="display-5 text-white mb-20">Domande.</h1>
                         <div class="form-group w-100 mb-0">
                             <div class="input-group">
                                 <input class="form-control form-control-lg filled-input bg-white" placeholder="Search by keywords" type="text">
@@ -152,7 +151,6 @@
                 </div>
             </div>
         </div>
-        <!-- /Row -->
     </div>
 
     <!-- footer -->
