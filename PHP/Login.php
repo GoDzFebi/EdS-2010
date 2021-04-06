@@ -8,7 +8,8 @@ $username = $_POST["user"];
 
 
 $result=FindUtente($password, $username);
-
+echo($password);
+echo($username);
 
 
 
