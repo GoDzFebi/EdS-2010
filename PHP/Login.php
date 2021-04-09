@@ -8,12 +8,16 @@ $username = $_POST["user"];
 
 
 $result=FindUtente($password, $username);
-
+echo($password);
+echo($username);
 
 
 
 if($result){
-    
+    session_start();
+    $_SESSION['pwd'] = $hash;
+    echo( $_SESSION['pwd']);
+    header("Location: ../PHP-HTML/CronologiaTicket.php");
     
 }
 else {

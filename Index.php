@@ -17,7 +17,7 @@
 
   <!-- navbar -->
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
     <div class="container">
       <a href="#" class="navbar-brand">
         <img class="logo" src="Image/LogoSito.png">
@@ -66,7 +66,7 @@
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active">
-      <img class="c-image" src="Image/computer1.jpg">
+      <img class="c-image" src="Image/callcenter.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ottimo Servizio Clienti</h2>
           <p class="lead">Raccogliamo Ticket.</p>
@@ -74,7 +74,7 @@
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
       <div class="carousel-item">
-      <img class="c-image" src="Image/tvrepair.jpg">
+      <img class="c-image" src="Image/phonerepair.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ottimi Operatori</h2>
           <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
@@ -82,7 +82,7 @@
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
       <div class="carousel-item">
-      <img class="c-image" src="Image/riparatelefono1.jpg">
+      <img class="c-image" src="Image/computerrepair.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ripariamo di Tutto</h2>
           <p class="lead">Ripariamo tutto, non solo cellulari</p>

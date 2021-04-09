@@ -3,7 +3,7 @@
         $servername="localhost";
         $username="Eds2010";
         $password="password123";
-        $dbname="eds2010";
+        $dbname="eds-2010";
 
         $conn= new mysqli($servername,$username,$password,$dbname);
         
@@ -20,9 +20,8 @@
         $sql = "SELECT * FROM cliente WHERE username='$username'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
-        if(password_verify($pass, $row['password'])){
+        if($pass==$row['password']){
             return $row;
-            return $result;
         }
         $conn->close();
     }
