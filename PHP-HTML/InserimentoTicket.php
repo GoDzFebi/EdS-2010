@@ -29,19 +29,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="Index.php">Home</a>
+            <a class="nav-link" href="../Index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/Login.php">Login</a>
+            <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PHP-HTML/FAQ.php">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
           </li>
         </ul>
       </div>
