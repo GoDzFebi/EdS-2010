@@ -32,13 +32,13 @@
             <a class="nav-link" href="../Index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="CronologiaTicket.php">Miei Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="FAQ.php">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
           </li>
         </ul>
       </div>

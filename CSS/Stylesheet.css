@@ -277,7 +277,7 @@ p {
 
 p {
     margin-top: 50px;
-    color: rgb(16, 69, 184);
+    color: white;
 }
 
 a {
@@ -425,7 +425,6 @@ a:hover {
 /* carosello */
 
 .carousel-item {
-    padding-top: 100px;
     height: 100vh;
     min-height: 350px;
     background: no-repeat center center scroll;
@@ -449,4 +448,15 @@ a:hover {
     margin-bottom: 40px;
     padding-top: 40px;
     color: inherit;
+}
+
+/* tabella cronologia ticket */
+
+.tabella{
+    margin-left:25%; 
+    margin-right:25%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 50%;
 }
