@@ -1,5 +1,6 @@
 <?php
-//session.start()
+session_start();
+require '../PHP/Login.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +39,7 @@
             <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
           </li>
         </ul>
       </div>
@@ -47,7 +48,7 @@
 
 <div  id="containerLogin">
   <h3 style="color:rgb(255, 255, 255);">Accedi</h3>
-  <form action="CronologiaTicket.php" method="POST">
+  <form action="" method="POST">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="username" name="user">
     </div>
