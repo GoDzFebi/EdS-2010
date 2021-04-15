@@ -1,3 +1,10 @@
+<?php
+session_start();
+require '../PHP/DBConfig.php';
+if (!isset($_SESSION['id'])) {
+    header("location:../PHP-HTML/Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,30 +44,31 @@
                         <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
+                        <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- tabella -->
+    <!-- tabella IN CORSO-->
+    <h1 class="header_cronologiaticket">Ticket in Corso</h1>
     <div class=tabella>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Data Inizio</th>
-                    <th scope="col">Data Fine</th>
-                    <th scope="col">Stato</th>
                     <th scope="col">Descrizione</th>
+                    <th scope="col">Stato</th>
+                    <th scope="col">Data Fine Prevista</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                require '../PHP/DBConfig.php';
                 $con = Connect();
-                $sql = $con->prepare("SELECT * FROM ticket");
+                $id = $_SESSION['id'];
+                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='In Corso' AND ticket.fk_cliente=?;");
+                $sql->bind_param("i", $id);
                 $sql->execute();
                 $result = $sql->get_result();
                 do {
@@ -68,16 +76,56 @@
                     if ($row) {
                         echo "<tr>
                     <td>" . $row["id_ticket"] . "</td>
-                    <td>" . $row["data_inizio"] . "</td>
-                    <td>" . $row["data_fine"] . "</td>
-                    <td>" . $row["stato"] . "</td>
                     <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
                     </tr>";
                     }
                 } while ($row);
                 ?>
             </tbody>
         </table>
+    </div> <br><br><br>
+
+    <!-- tabella COMPLETATO -->
+    <h1 class="header_cronologiaticket">Ticket Completati</h1>
+    <div class=tabella>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Stato</th>
+                    <th scope="col">Data Inizio</th>
+                    <th scope="col">Data Fine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $con = Connect();
+                $id = $_SESSION['id'];
+                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='Completato' AND ticket.fk_cliente=?;");
+                $sql->bind_param("i", $id);
+                $sql->execute();
+                $result = $sql->get_result();
+                do {
+                    $row = $result->fetch_assoc();
+                    if ($row) {
+                        echo "<tr>
+                    <td>" . $row["id_ticket"] . "</td>
+                    <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_inizio"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
+                    </tr>";
+                    }
+                } while ($row);
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="logout_text">
+        <p><b><a href="../PHP/Logout.php">Logout</a></b></p>
     </div>
 
     <!-- footer -->

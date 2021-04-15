@@ -41,7 +41,7 @@
             <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
           </li>
         </ul>
       </div>
@@ -50,7 +50,7 @@
 
   <div  id="containerRegister">
   <h3 style="color:rgb(255, 255, 255);">Registrati</h3>
-  <form action="../PHP/Login.php" method="POST">
+  <form action="../PHP/Register.php" method="POST">
     <div class="form-group" id="registerform1">
       <input type="text" class="form-control" placeholder="nome" name="nome">
     </div>

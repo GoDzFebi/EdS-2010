@@ -516,6 +516,7 @@ a:hover {
 .c-image {
     width: 100%;
     height: auto;
+    filter: brightness(0.50);
 }
 
 
@@ -529,13 +530,40 @@ a:hover {
     color: inherit;
 }
 
+
 /* tabella cronologia ticket */
 
-.tabella{
-    margin-left:25%; 
-    margin-right:25%;
+.tabella {
+    margin-left: 20%;
+    margin-right: 25%;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 50px;
-    width: 50%;
+    width: 60%;
+}
+
+.header_cronologiaticket {
+    padding-top: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* logout */
+
+.logout_text {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logout_text:hover {
+    color: #33353d;
 }

@@ -41,7 +41,7 @@
             <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
+            <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
           </li>
         </ul>
       </div>

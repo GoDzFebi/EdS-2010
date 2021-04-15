@@ -1,6 +1,5 @@
 <?php
 $page = $_GET["id"];
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +49,7 @@ $page = $_GET["id"];
                         <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PHP-HTML/FAQ.php">FAQ</a>
+                        <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +80,7 @@ $page = $_GET["id"];
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
-                                        <div class="title"><a href="FAQ.php?id=0">Smartphone</a></div>
+                                        <div class="title"><a href="FAQ.php?id=1">Smartphone</a></div>
                                         <div class="description">
                                             Lorem ipsum dolor sit amet, consectetur.
                                         </div>
@@ -90,7 +89,7 @@ $page = $_GET["id"];
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
-                                        <div class="title"><a href="FAQ.php?id=1">TV</a></div>
+                                        <div class="title"><a href="FAQ.php?id=2">TV</a></div>
                                         <div class="description">
                                             Lorem ipsum dolor sit amet, consectetur.
                                         </div>
@@ -99,7 +98,7 @@ $page = $_GET["id"];
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
-                                        <div class="title"><a href="FAQ.php?id=2">Altro</a></div>
+                                        <div class="title"><a href="FAQ.php?id=3">Altro</a></div>
                                         <div class="description">
                                             Lorem ipsum dolor sit amet, consectetur.
                                         </div>
@@ -109,7 +108,7 @@ $page = $_GET["id"];
                         </div>
                         <?php
                         switch ($page) {
-                            case 0:
+                            case 1:
                         ?>
                                 <div class="col-lg-9 col-sm-8">
                                     <h3 class="title-block second-child">Domande e Risposte</h3>
@@ -186,7 +185,7 @@ $page = $_GET["id"];
                                         </div>
                                     <?php
                                     break;
-                                case 1:
+                                case 2:
                                     ?>
                                         <div class="col-lg-9 col-sm-8">
                                             <h3 class="title-block second-child">Domande e Risposte</h3>
@@ -263,7 +262,7 @@ $page = $_GET["id"];
                                                 </div>
                                             <?php
                                             break;
-                                        case 2:
+                                        case 3:
                                             ?>
                                                 <div class="col-lg-9 col-sm-8">
                                                     <h3 class="title-block second-child">Domande e Risposte</h3>
