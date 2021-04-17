@@ -19,7 +19,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
     <div class="container">
-      <a href="#" class="navbar-brand">
+      <a href="Index.php" class="navbar-brand">
         <img class="logo" src="Image/LogoSito.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,55 +50,55 @@
 
   <!-- descrizione sito -->
 
-    <!-- <div class="descrizionesito">
+  <!-- <div class="descrizionesito">
     <h1 class="text-center">Presentazione Sito</h1>
   </div> -->
 
   <!-- carosello -->
 
   <header>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active">
-      <img class="c-image" src="Image/callcenter.jpg">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ottimo Servizio Clienti</h2>
-          <p class="lead">Raccogliamo Ticket.</p>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active">
+          <img class="c-image" src="Image/callcenter.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4">Ottimo Servizio Clienti</h2>
+            <p class="lead">Raccogliamo Ticket.</p>
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item">
+          <img class="c-image" src="Image/phonerepair.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4">Ottimi Operatori</h2>
+            <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item">
+          <img class="c-image" src="Image/computerrepair.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4">Ripariamo di Tutto</h2>
+            <p class="lead">Ripariamo tutto, non solo cellulari</p>
+          </div>
         </div>
       </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item">
-      <img class="c-image" src="Image/phonerepair.jpg">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ottimi Operatori</h2>
-          <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item">
-      <img class="c-image" src="Image/computerrepair.jpg">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ripariamo di Tutto</h2>
-          <p class="lead">Ripariamo tutto, non solo cellulari</p>
-        </div>
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-  </div>
-</header>
+  </header>
 
   <!-- categorie -->
 
@@ -109,27 +109,27 @@
       </div>
       <div class="row features">
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/batteriaicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Batteria</h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Batteria </a></h3>
           <p class="description">Batteria dura poco, problemi a caricare il dispositivo, il dispositivo non si carica, batteria gonfia, batteria scalda troppo...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/chiamateicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Chiamate</h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Chiamate</a></h3>
           <p class="description">Durante le chiamate non si sente l'audio o il destinatario non sente, problemi ad effettuare chiamate, problemi a ricevere telefonate...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/cameraicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Fotocamera</h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Fotocamera</a></h3>
           <p class="description">La fotocamera non funziona, le foto sono sfocate, le foto sono nere, la fotocamera è rotta, il flash non funziona, non si vedono foto...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/wifiicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Connessioni WiFi</h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Connessioni WiFi</a></h3>
           <p class="description">Il dispositivo non rileva il wifi, la connessione è lenta, il dispositivo non riesce a connetersi, il dispositivo non funziona con wifi...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/appicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Applicazioni</h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Applicazioni</a></h3>
           <p class="description">La app non si apre, l'app fa crashare il dispositivo, l'app non si installa, l'app blocca il telefono, l'app richiede permessi strani...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/hardwareicon.png"></img>
-          <h3 class="btn" href="PHP - HTML/InserimentoTicket.php">Hardware</h3>
+          <h3><a class="btn" href="PHP-HTML/InserimentoTicket.php">Hardware</a></h3>
           <p class="description">Il dispositivo ha poca ram, la gpu non regge certe applicazioni, la cpu si surriscalda troppo, problemi alla batteria, i tasti sono rotti...</p>
         </div>
       </div>
@@ -143,56 +143,56 @@
   <h2 class="faqtitle">Domande Frequenti</h2>
   <div class="container py-3">
     <div class="row">
-        <div class="col-10 mx-auto">
-            <div class="accordion" id="faqExample">
-                <div class="card">
-                    <div class="card-header p-2" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Q: Perchè il telefono non si accende?
-                            </button>
-                          </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
-                        <div class="card-body">
-                            <b>Risposta:</b> Prova a metterlo in carica, potrebbe essere scarico.
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header p-2" id="headingTwo">
-                        <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Q: La batteria è gonfia, perchè?
-                        </button>
-                      </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
-                        <div class="card-body">
-                            <b>Risposta:</b> La batteria potrebbe essere vecchia e troppo utilizzata, va cambiata.
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header p-2" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Q: La tv non si spegne.
-                            </button>
-                          </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                        <div class="card-body">
-                            <b>Risposta:</b> stacca la spina.
-                        </div>
-                    </div>
-                </div>
+      <div class="col-10 mx-auto">
+        <div class="accordion" id="faqExample">
+          <div class="card">
+            <div class="card-header p-2" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Q: Perchè il telefono non si accende?
+                </button>
+              </h5>
             </div>
 
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+              <div class="card-body">
+                <b>Risposta:</b> Prova a metterlo in carica, potrebbe essere scarico.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header p-2" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Q: La batteria è gonfia, perchè?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+              <div class="card-body">
+                <b>Risposta:</b> La batteria potrebbe essere vecchia e troppo utilizzata, va cambiata.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header p-2" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Q: La tv non si spegne.
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+              <div class="card-body">
+                <b>Risposta:</b> stacca la spina.
+              </div>
+            </div>
+          </div>
         </div>
+
+      </div>
     </div>
-</div>
+  </div>
 
   <!-- footer -->
   <footer class="site-footer">

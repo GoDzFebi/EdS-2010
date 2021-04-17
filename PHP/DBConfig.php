@@ -19,7 +19,7 @@ function FindUtente($pass, $username)
 {
 
     $conn = Connect();
-    $sql = "SELECT id_cliente, username, password FROM cliente WHERE username=?";
+    $sql = "SELECT id_cliente, username, password, amministratore FROM cliente WHERE username=?";
     $stmt=$conn->prepare($sql);
     $stmt->bind_param('s',$username);
     $stmt->execute();
@@ -30,6 +30,7 @@ function FindUtente($pass, $username)
     if (password_verify($pass, $row['password'])) {
         $_SESSION['id'] = $row["id_cliente"];
         $_SESSION['user'] = $row["username"];
+        $_SESSION['tipo'] = $row["amministratore"];
         header("location: ../PHP-HTML/CronologiaTicket.php");
         exit();
     } else
