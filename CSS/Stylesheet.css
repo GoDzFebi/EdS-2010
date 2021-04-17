@@ -46,10 +46,10 @@
 #containerRegister {
     text-align: center;
     width: 920px;
-    height: 540px;
-    padding-top: 40px;
+    height: 510px;
+    padding-top: 35px;
     margin: auto;
-    margin-top: 250px;
+    margin-top: 55px;
     margin-bottom: 40px;
     background-color: rgb(29, 28, 28);
     border-radius: 20px;
@@ -67,14 +67,14 @@
     padding: 40px;
     width: 450px; 
     left:210px;
-    bottom:354px;
+    bottom:395px;
 
 }
 #registerButton{
     font-size:24px;
     position: relative;
     border-radius: 12px;
-    border: 2px solid rgb(238, 13, 208);
+    border: 2px solid rgb(0, 0, 0);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     opacity: 0.6;
     font-family:Arial, Helvetica, sans-serif;
@@ -90,49 +90,6 @@ p {
     margin-top: 50px;
     color: rgb(16, 69, 184);
 }
-#containerRegister {
-    text-align: center;
-    width: 920px;
-    height: 540px;
-    padding-top: 40px;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 40px;
-    background-color: rgb(29, 28, 28);
-    border-radius: 20px;
-}
-#registerform1{
-    position: relative;
-    margin: auto;
-    padding: 40px;
-    width: 450px; 
-    right:210px;
-}
-#registerform2{
-    position: relative;
-    margin: auto;
-    padding: 40px;
-    width: 450px; 
-    left:210px;
-    bottom:354px;
-}
-#registerButton{
-    font-size:24px;
-    margin-bottom: 200px;
-    border-radius: 12px;
-    border: 2px solid rgb(238, 13, 208);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    opacity: 0.6;
-    font-family:Arial, Helvetica, sans-serif;
-}
-#registerButton:hover{
-    font-size:24px;
-    border-radius: 12px;
-    border: 2px solid rgb(16, 69, 184);;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    opacity: 1;
-}
-
 #register {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -144,9 +101,9 @@ p {
 }
 #ticket {
     text-align: center;
-    width: 1000px;
-    height: 920px;
-    padding-top: 40px;
+    width: 960px;
+    height: 710px;
+    padding-top: 30px;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 150px;
@@ -156,7 +113,7 @@ p {
 #insertTicket{
     position: relative;
     margin: auto;
-    padding: 40px;
+    padding: 25px;
     width: 450px; 
     right:250px;
 }
@@ -164,8 +121,8 @@ p {
     margin: auto;
     padding: 40px;
     width: 350px; 
-    left:250px;
-    bottom: 500px;
+    left:210px;
+    bottom: 400px;
     border-radius: 20px;
     font-size:24px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

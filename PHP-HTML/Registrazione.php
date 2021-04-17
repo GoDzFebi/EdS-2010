@@ -1,5 +1,5 @@
 <?php
-//session.start()
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,18 +58,19 @@
       <input type="text" class="form-control" placeholder="username" name="usr">
     </div>
     <div class="form-group" id="registerform1">
-      <input type="text" class="form-control" placeholder="telefono" name="telefono">
+      <input type="text" class="form-control" placeholder="telefono*" name="telefono">
     </div>
+    <button id="registerButton" type="submit" name="submit">Registrati</button>
     <div class="form-group" id="registerform2">
       <input type="text" class="form-control" placeholder="cognome" name="cognome">
     </div>
     <div class="form-group" id="registerform2">
-      <input type="text" class="form-control" placeholder="password" name="pwd">
+      <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <div class="form-group" id="registerform2">
-      <input type="text" class="form-control" placeholder="mail" name="mail">
+      <input type="text" class="form-control" placeholder="mail*" name="mail">
     </div> 
-    <button id="registerButton" type="submit" name="submit">Registrati</button>
+ 
  </form>
 </div>
   <!-- footer 

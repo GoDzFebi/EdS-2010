@@ -1,5 +1,8 @@
 <?php
-//session.start()
+session_start();
+/*if(!isset($_SESSION['id'])){
+  header("location:../PHP-HTML/Login.php");
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,13 +67,31 @@
       <input type="text" class="form-control" placeholder="anomalia" name="anomalia">
     </div>
     <div class="form-group" id="insertTicket">
-      <input type="text" class="form-control" placeholder="categoria" name="categoria">
+      <select type="text" class="form-control" placeholder="categoria" name="categoria">
+      <option>categoria</option>
+      <option value="Messaggi">Messaggi</option>
+      <option value="Bluetooth">Bluetooth</option>
+      <option value="Hardware">Hardware</option>
+      <option value="Impostazioni">Impostazioni</option>
+      <option value="Accensione">Accensione</option>
+      <option value="Aggiornamenti">Aggiornamenti</option>
+      <option value="Supporto generale">Supporto generale</option>
+      <option value="Problemi audio">Problemi audio</option>
+      <option value="Backup">Backup</option>
+      <option value="Fotocamera">Fotocamera</option>
+      <option value="Chiamate">Chiamate</option>
+      <option value="Batteria">Batteria</option>
+      </select>
     </div>
     <div class="form-group" id="insertTicket">
       <input type="text" class="form-control" placeholder="garanzia" name="garanzia">
     </div> 
     <div class="form-group" id="insertTicket">
-      <input type="text" class="form-control" placeholder="tipologia" name="tipo_apparecchio">
+      <select type="text" class="form-control" placeholder="tipologia" name="tipo_apparecchio">
+      <option>tipologia</option>
+      <option value="1">Telefono</option>
+      <option value="2">Televisore</option>
+      </select>
     </div>
     <button id="creaticket" type="submit" name="submit">Crea</button>
  </form>
