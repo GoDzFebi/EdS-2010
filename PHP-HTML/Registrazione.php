@@ -1,5 +1,5 @@
 <?php
-//session.start()
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
 
  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
     <div class="container">
-      <a href="#" class="navbar-brand">
+      <a href="../Index.php" class="navbar-brand">
         <img class="logo" src="../Image/LogoSito.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,18 +58,19 @@
       <input type="text" class="form-control" placeholder="username" name="usr">
     </div>
     <div class="form-group" id="registerform1">
-      <input type="text" class="form-control" placeholder="telefono" name="telefono">
+      <input type="text" class="form-control" placeholder="telefono*" name="telefono">
     </div>
+    <button id="registerButton" type="submit" name="submit">Registrati</button>
     <div class="form-group" id="registerform2">
       <input type="text" class="form-control" placeholder="cognome" name="cognome">
     </div>
     <div class="form-group" id="registerform2">
-      <input type="text" class="form-control" placeholder="password" name="pwd">
+      <input type="password" class="form-control" placeholder="password" name="pwd">
     </div>
     <div class="form-group" id="registerform2">
-      <input type="text" class="form-control" placeholder="mail" name="mail">
+      <input type="text" class="form-control" placeholder="mail*" name="mail">
     </div> 
-    <button id="registerButton" type="submit" name="submit">Registrati</button>
+ 
  </form>
 </div>
   <!-- footer 
