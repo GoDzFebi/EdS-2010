@@ -19,7 +19,7 @@ session_start();
 
  <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
     <div class="container">
-      <a href="#" class="navbar-brand">
+      <a href="../Index.php" class="navbar-brand">
         <img class="logo" src="../Image/LogoSito.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

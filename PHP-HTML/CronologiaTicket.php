@@ -22,7 +22,7 @@ if (!isset($_SESSION['id'])) {
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
         <div class="container">
-            <a class="navbar-brand">
+            <a class="navbar-brand" href="../Index.php">
                 <img class="logo" src="../Image/LogoSito.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,6 +125,14 @@ if (!isset($_SESSION['id'])) {
         </table>
     </div>
     <div class="logout_text">
+    <?php
+        if($_SESSION["tipo"]==1){
+        ?>
+        <p><b><a href="../PHP-HTML/GestioneTicket.php">Pagina Admin</a></b></p>
+        <?php
+        };
+        ?>
+        <br />
         <p><b><a href="../PHP/Logout.php">Logout</a></b></p>
     </div>
 
