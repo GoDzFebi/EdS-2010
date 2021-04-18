@@ -68,15 +68,15 @@
       <div class="carousel-item active">
       <img class="c-image" src="Image/callcenter.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ottimo Servizio Clienti</h2>
-          <p class="lead">Raccogliamo Ticket.</p>
+          <h2 class="display-4">Ottimo servizio clienti</h2>
+          <p class="lead">Raccogliamo ticket.</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
       <div class="carousel-item">
       <img class="c-image" src="Image/phonerepair.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ottimi Operatori</h2>
+          <h2 class="display-4">Ottimi operatori</h2>
           <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
         </div>
       </div>
@@ -84,7 +84,7 @@
       <div class="carousel-item">
       <img class="c-image" src="Image/computerrepair.jpg">
         <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Ripariamo di Tutto</h2>
+          <h2 class="display-4">Ripariamo di tutto</h2>
           <p class="lead">Ripariamo tutto, non solo cellulari</p>
         </div>
       </div>
@@ -105,7 +105,7 @@
   <div class="features-clean">
     <div class="container">
       <div class="intro">
-        <h2 class="text-center">Categorie Assistenza</h2>
+        <h2 class="text-center">Categorie assistenza</h2>
       </div>
       <div class="row features">
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/batteriaicon.png"></img>
@@ -140,7 +140,7 @@
 
   <!-- faq -->
 
-  <h2 class="faqtitle">Domande Frequenti</h2>
+  <h2 class="faqtitle">Domande frequenti</h2>
   <div class="container py-3">
     <div class="row">
         <div class="col-10 mx-auto">

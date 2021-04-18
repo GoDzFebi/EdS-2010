@@ -75,33 +75,24 @@ $page = $_GET["id"];
                                 <label for="search" class="sr-only">Search</label>
                                 <input type="search" class="form-control" id="search" placeholder="Cerca qui...">
                             </form>
-                            <h3 class="title-block mt-3">Link Importanti</h3>
+                            <h3 class="title-block mt-3">Link importanti</h3>
                             <div class="menu-lg">
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
-                                        <div class="title"><a href="FAQ.php?id=1">Smartphone</a></div>
-                                        <div class="description">
-                                            Lorem ipsum dolor sit amet, consectetur.
-                                        </div>
+                                        <div class="title"><a href="FAQ.php?id=1">Smartphone</a></div>                                      
                                     </div>
                                 </div>
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
                                         <div class="title"><a href="FAQ.php?id=2">TV</a></div>
-                                        <div class="description">
-                                            Lorem ipsum dolor sit amet, consectetur.
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <i class="fa text-primary"></i>
                                     <div class="content">
                                         <div class="title"><a href="FAQ.php?id=3">Altro</a></div>
-                                        <div class="description">
-                                            Lorem ipsum dolor sit amet, consectetur.
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +114,7 @@ $page = $_GET["id"];
                                             </div>
                                             <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                    <p class="p-0 m-0">Collega il caricabatterie e aspetta qualche ora. Se il dispositivo continua a non accendersi inviaci un ticket!</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -137,7 +128,7 @@ $page = $_GET["id"];
                                             </div>
                                             <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                    <p class="p-0 m-0">Spegnere immediatamente il telefono e aspettare che perda la carica per sostituire la batteria. Puoi venire a comprarla in uno dei nostri punti vendita!</p>
                                                 </div>
                                             </div>
                                         </div>
