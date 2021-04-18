@@ -38,15 +38,24 @@ if (isset($_POST['delete'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-// } else if (isset($_POST['accept'])) {
-//     $con = Connect();
-//     $idt = $_POST['idt'];
-//     $sql2 = $con->prepare("UPDATE ticket SET stato='Completato' WHERE id_ticket=?");
-//     $sql2->bind_param('i', $idt);
-//     $sql2->execute();
-//     $sql2->close();
-//     $con->close();
-// }
+} else if (isset($_POST['accept'])) {
+    $con = Connect();
+    $ida = $_POST['idt'];
+    $datainizi = $_POST['datainizio'];
+    $datafin = $_POST['datafine'];
+    $fkpda=$_POST['idpda'];
+    $sql3= $con->prepare("SELECT id_apparecchio, anomalia, fk_cliente FROM apparecchio WHERE id_apparecchio=?");
+    $sql3->bind_param('i', $ida);
+    $sql3->execute();
+    $res=$sql3->get_result();
+    $desc=$res->fetch_assoc();
+    $sql2 = $con->prepare("INSERT INTO ticket (data_inizio, data_fine, stato, descrizione, fk_pda, fk_apparecchio, fk_cliente) VALUES (?,?,'In Corso',?,?,?,?)");
+    $sql2->bind_param('sssiii',$datainizi, $datafin, $desc['anomalia'], $fkpda, $desc['id_apparecchio'], $desc['fk_cliente']);
+    $sql2->execute();
+    $sql2->close();
+    $sql3->close();
+    $con->close();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,48 +223,51 @@ if (isset($_POST['delete'])) {
     </div>
 
     <!-- approva ticket -->
-    <!-- <div class=tabella>
-                    <table id="myTable" class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">ID Apparecchio</th>
-                                <th scope="col">Categoria</th>
-                                <th scope="col">Anomalia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                    //         $con = Connect();
-                    //         $id = $_SESSION['id'];
-                    //         $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia FROM apparecchio");
-                    //         $sql->execute();
-                    //         $result = $sql->get_result();
-                    //         $sql->close();
-                    //         do {
-                    //             $row = $result->fetch_assoc();
-                    //             if ($row) {
-                    //                 echo "<tr>
-                    // <td>" . $row["id_apparecchio"] . "</td>
-                    // <td>" . $row["categoria"] . "</td>
-                    // <td>" . $row["anomalia"] . "</td>
-                    // </tr>";
-                    //             }
-                    //         } while ($row);
-                    //         $con->close();
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-                <br />
+    <div class=tabella>
+        <table id="myTable" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID Apparecchio</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Anomalia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $con = Connect();
+                $id = $_SESSION['id'];
+                $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia FROM apparecchio");
+                $sql->execute();
+                $result = $sql->get_result();
+                $sql->close();
+                do {
+                    $row = $result->fetch_assoc();
+                    if ($row) {
+                        echo "<tr>
+                     <td>" . $row["id_apparecchio"] . "</td>
+                     <td>" . $row["categoria"] . "</td>
+                     <td>" . $row["anomalia"] . "</td>
+                     </tr>";
+                    }
+                } while ($row);
+                $con->close();
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <br />
     <div class="containereAdminTicket" id="containerApprovaTicket">
         <h3 style="color:rgb(255, 255, 255);">Approva Ticket</h3>
         <form action="" method="POST">
             <div class="form-group">
                 <input type="number" class="form-control" placeholder="Numero Richiesta" name="idt">
+                <input type="number" class="form-control" placeholder="PDA" name="idpda">
+                <input type="date" class="form-control" placeholder="Data Inizio" name="datainizio">
+                <input type="date" class="form-control" placeholder="Data Fine" name="datafine">
             </div>
             <button class="buttonTicket" id="acceptTicketButton" type="submit" name="accept">Accetta Ticket</button>
         </form>
-    </div> -->
+    </div>
 
     <!-- logout -->
     <div class="logout_text">
