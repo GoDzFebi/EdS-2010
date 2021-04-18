@@ -1,8 +1,6 @@
 <?php
 session_start();
-/*if(!isset($_SESSION['id'])){
-  header("location:../PHP-HTML/Login.php");
-}*/
+require "../PHP/DBConfig.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +48,10 @@ session_start();
       </div>
     </div>
   </nav>
+<?php
+if(isset($_SESSION['id'])){
 
+?>
 <div  id="ticket">
   <h3 style="color:rgb(255, 255, 255);">Crea il tuo ticket</h3>
   <form action="../PHP/InserimentoTicket.php" method="POST">
@@ -96,7 +97,16 @@ session_start();
     <button id="creaticket" type="submit" name="submit">Crea</button>
  </form>
 </div>
-
+<?php
+}
+else{
+?>
+<a class="titoloclass">Per Inserire un Ticket devi essere Loggato</a>
+<p><b><a href="../PHP-HTML/Login.php">Login</a></b></p>
+<br /><br /><br /><br /><br />
+<?php
+}
+?>
 <!-- footer -->
 <footer class="site-footer">
     <div class="container">

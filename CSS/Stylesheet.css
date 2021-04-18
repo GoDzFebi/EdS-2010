@@ -606,3 +606,9 @@ a:hover {
     opacity: 0.6;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.titoloclass {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
