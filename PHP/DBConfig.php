@@ -68,9 +68,11 @@ function InserisciUtente($username, $password, $nome, $cognome, $telefono, $mail
 
 function InserisciTicket($marca, $modello, $numero_serie, $anomalia, $categoria, $garanzia, $tipo_apparecchio)
 {
+    session_start();
     set_time_limit(0);
     $conn = Connect();
-    $sql = 'INSERT INTO apparecchio ( marca, modello, numero_serie, anomalia, categoria, garanzia, tipo_apparecchio) VALUES ( "' . $marca . '", "' . $modello . '", "' . $numero_serie . '", "' . $anomalia . '", "' . $categoria . '", "' . $garanzia . '", "' . $tipo_apparecchio . '")';
+    $fkcliente=$_SESSION['id'];
+    $sql = 'INSERT INTO apparecchio ( marca, modello, numero_serie, anomalia, categoria, garanzia, tipo_apparecchio, fk_cliente) VALUES ( "' . $marca . '", "' . $modello . '", "' . $numero_serie . '", "' . $anomalia . '", "' . $categoria . '", "' . $garanzia . '", "' . $tipo_apparecchio . '", "'.$fkcliente.'")';
     if ($conn->query($sql) === TRUE) {
         echo "Nuovo ticket aggiunto";
         echo '<br><a href="../PHP-HTML/CronologiaTicket.php">Back</a>';
