@@ -69,7 +69,7 @@
       <img class="c-image" src="Image/callcenter.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ottimo servizio clienti</h2>
-          <p class="lead">Raccogliamo ticket.</p>
+          <soas class="lead">Raccogliamo ticket.</soas>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -77,7 +77,7 @@
       <img class="c-image" src="Image/phonerepair.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ottimi operatori</h2>
-          <p class="lead">Ripariamo tutti i vostri dispositivi.</p>
+          <soas class="lead">Ripariamo tutti i vostri dispositivi.</soas>
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
@@ -85,7 +85,7 @@
       <img class="c-image" src="Image/computerrepair.jpg">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Ripariamo di tutto</h2>
-          <p class="lead">Ripariamo tutto, non solo cellulari</p>
+          <soas class="lead">Ripariamo tutto, non solo cellulari</soas>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -230,10 +230,10 @@
 
         <div class="col-md-4 col-sm-6 col-xs-12">
           <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>

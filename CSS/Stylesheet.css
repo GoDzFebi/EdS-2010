@@ -68,9 +68,9 @@
     position: relative;
     margin: auto;
     padding: 40px;
-    width: 450px; 
-    left:210px;
-    bottom:395px;
+    width: 450px;
+    left: 210px;
+    bottom: 395px;
 }
 
 #registerButton {
@@ -368,6 +368,11 @@ p {
 p {
     margin-top: 50px;
     color: black;
+}
+
+soas {
+    margin-top: 50px;
+    color: white;
 }
 
 a {
