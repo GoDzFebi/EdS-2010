@@ -27,7 +27,7 @@ $page = $_GET["id"];
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top ">
         <div class="container">
-            <a href="../Index.php" class="navbar-brand">
+            <a href="#" class="navbar-brand">
                 <img class="logo" src="../Image/LogoSito.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +142,7 @@ $page = $_GET["id"];
                                             </div>
                                             <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                    <p class="p-0 m-0">Effettua un avvio forzato e prova a eliminare delle app incompatibili</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +156,7 @@ $page = $_GET["id"];
                                             </div>
                                             <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                    <p class="p-0 m-0">Prova a riavviare il telefono, a caricare il telefono in modalità provvisoria o a cambiare il cavo del telefono</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@ $page = $_GET["id"];
                                             </div>
                                             <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                    <p class="p-0 m-0">Crea un ticket o compra un nuovo telefono nei nostri negozi</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,7 +191,7 @@ $page = $_GET["id"];
                                                     </div>
                                                     <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                            <p class="p-0 m-0">Prova ad accendere la televisione in modalità standby</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -205,7 +205,7 @@ $page = $_GET["id"];
                                                     </div>
                                                     <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                            <p class="p-0 m-0">Spegni immediatamente la televisione e mandaci un ticket</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -219,7 +219,7 @@ $page = $_GET["id"];
                                                     </div>
                                                     <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                            <p class="p-0 m-0">Prova a cambiare il canale di ingresso della televisione</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -227,13 +227,13 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#collapseFour" class="">
-                                                                TV non si connette.
+                                                                Smart TV non si connette.
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                            <p class="p-0 m-0">Riavvia la TV o controlla lo stato della rete </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,7 +247,7 @@ $page = $_GET["id"];
                                                     </div>
                                                     <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                            <p class="p-0 m-0">Apri un ticket!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,13 +262,13 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionOne" class="collapsed">
-                                                                        Sos.
+                                                                        Come inviare un ticket
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                                    <p class="p-0 m-0">Vai in "Invia ticket" e compila il form!</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -276,13 +276,13 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionTwo" class="collapsed">
-                                                                        Sos.
+                                                                        Cosa fare dopo aver inviato il ticket
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                                    <p class="p-0 m-0">Porta il dispositivo danneggiato al PDA più vicino.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -290,13 +290,13 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionThree" class="collapsed">
-                                                                        Sos.
+                                                                        Come funziona dopo?
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                                    <p class="p-0 m-0">Una volta consegnato il dispositivo ce ne occuperemo noi. Puoi tornare a casa tranquillo!</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -304,13 +304,13 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFour" class="">
-                                                                        Sos.
+                                                                        Quando saprò che il dispositivo è pronto?
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                                    <p class="p-0 m-0">In "Miei ticket" sarà disponibile il tempo previsto al completamento della riparazione</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -318,13 +318,13 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFive" class="">
-                                                                        Sos.
+                                                                        Quando avviene il pagamento?
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac tortor vitae lorem lobortis.</p>
+                                                                    <p class="p-0 m-0">Il pagamento avviene alla riconsegna. In caso di mancata riparazione non ti faremo pagare nulla!</p>
                                                                 </div>
                                                             </div>
                                                         </div>
