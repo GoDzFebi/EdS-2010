@@ -67,24 +67,14 @@ session_start();
       <input type="text" class="form-control" placeholder="anomalia" name="anomalia">
     </div>
     <div class="form-group" id="insertTicket">
-      <select type="text" class="form-control" placeholder="categoria" name="categoria">
-      <option>categoria</option>
-      <option value="Messaggi">Messaggi</option>
-      <option value="Bluetooth">Bluetooth</option>
-      <option value="Hardware">Hardware</option>
-      <option value="Impostazioni">Impostazioni</option>
-      <option value="Accensione">Accensione</option>
-      <option value="Aggiornamenti">Aggiornamenti</option>
-      <option value="Supporto generale">Supporto generale</option>
-      <option value="Problemi audio">Problemi audio</option>
-      <option value="Backup">Backup</option>
-      <option value="Fotocamera">Fotocamera</option>
-      <option value="Chiamate">Chiamate</option>
-      <option value="Batteria">Batteria</option>
-      </select>
+      <input type="text" class="form-control" placeholder="categoria" name="categoria">
     </div>
     <div class="form-group" id="insertTicket">
-      <input type="text" class="form-control" placeholder="garanzia" name="garanzia">
+      <select type="text" class="form-control" placeholder="garanzia" name="garanzia">
+      <option>garanzia</option>
+      <option value="Si">Si</option>
+      <option value="No">No</option>
+      </select>
     </div> 
     <div class="form-group" id="insertTicket">
       <select type="text" class="form-control" placeholder="tipologia" name="tipo_apparecchio">
