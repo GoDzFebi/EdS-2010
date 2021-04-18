@@ -13,8 +13,7 @@ if (isset($_POST['delete'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-}
-else if (isset($_POST['update'])) {
+} else if (isset($_POST['update'])) {
     $con = Connect();
     $idt = $_POST['idt'];
     $datafin = $_POST['datafine'];
@@ -23,8 +22,7 @@ else if (isset($_POST['update'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-}
-else if (isset($_POST['statusInCorso'])) {
+} else if (isset($_POST['statusInCorso'])) {
     $con = Connect();
     $idt = $_POST['idt'];
     $sql2 = $con->prepare("UPDATE ticket SET stato='In Corso' WHERE id_ticket=?");
@@ -32,8 +30,7 @@ else if (isset($_POST['statusInCorso'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-}
-else if (isset($_POST['statusCompletato'])) {
+} else if (isset($_POST['statusCompletato'])) {
     $con = Connect();
     $idt = $_POST['idt'];
     $sql2 = $con->prepare("UPDATE ticket SET stato='Completato' WHERE id_ticket=?");
@@ -41,7 +38,15 @@ else if (isset($_POST['statusCompletato'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-}
+// } else if (isset($_POST['accept'])) {
+//     $con = Connect();
+//     $idt = $_POST['idt'];
+//     $sql2 = $con->prepare("UPDATE ticket SET stato='Completato' WHERE id_ticket=?");
+//     $sql2->bind_param('i', $idt);
+//     $sql2->execute();
+//     $sql2->close();
+//     $con->close();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +56,7 @@ else if (isset($_POST['statusCompletato'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
     <link href="../CSS/Stylesheet.css" rel="stylesheet" type="text/css" />
     <title>GestioneTicket</title>
 </head>
@@ -194,8 +199,6 @@ else if (isset($_POST['statusCompletato'])) {
             <button class="buttonTicket" id="completatoTicketButton" type="submit" name="statusCompletato">Ticket Completato</button>
         </form>
     </div>
-    
-    <!-- aggiungi ticket -->
 
     <!-- modifica data fine -->
     <div class="containereAdminTicket" id="containerModificaData">
@@ -210,7 +213,49 @@ else if (isset($_POST['statusCompletato'])) {
         </form>
     </div>
 
-    <!-- modifica stato ticket -->
+    <!-- approva ticket -->
+    <!-- <div class=tabella>
+                    <table id="myTable" class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ID Apparecchio</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Anomalia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                    //         $con = Connect();
+                    //         $id = $_SESSION['id'];
+                    //         $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia FROM apparecchio");
+                    //         $sql->execute();
+                    //         $result = $sql->get_result();
+                    //         $sql->close();
+                    //         do {
+                    //             $row = $result->fetch_assoc();
+                    //             if ($row) {
+                    //                 echo "<tr>
+                    // <td>" . $row["id_apparecchio"] . "</td>
+                    // <td>" . $row["categoria"] . "</td>
+                    // <td>" . $row["anomalia"] . "</td>
+                    // </tr>";
+                    //             }
+                    //         } while ($row);
+                    //         $con->close();
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <br />
+    <div class="containereAdminTicket" id="containerApprovaTicket">
+        <h3 style="color:rgb(255, 255, 255);">Approva Ticket</h3>
+        <form action="" method="POST">
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Numero Richiesta" name="idt">
+            </div>
+            <button class="buttonTicket" id="acceptTicketButton" type="submit" name="accept">Accetta Ticket</button>
+        </form>
+    </div> -->
 
     <!-- logout -->
     <div class="logout_text">
