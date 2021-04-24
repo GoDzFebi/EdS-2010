@@ -38,23 +38,6 @@ if (isset($_POST['delete'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
-} else if (isset($_POST['accept'])) {
-    $con = Connect();
-    $ida = $_POST['idt'];
-    $datainizi = $_POST['datainizio'];
-    $datafin = $_POST['datafine'];
-    $fkpda=$_POST['idpda'];
-    $sql3= $con->prepare("SELECT id_apparecchio, anomalia, fk_cliente FROM apparecchio WHERE id_apparecchio=?");
-    $sql3->bind_param('i', $ida);
-    $sql3->execute();
-    $res=$sql3->get_result();
-    $desc=$res->fetch_assoc();
-    $sql2 = $con->prepare("INSERT INTO ticket (data_inizio, data_fine, stato, descrizione, fk_pda, fk_apparecchio, fk_cliente) VALUES (?,?,'In Corso',?,?,?,?)");
-    $sql2->bind_param('sssiii',$datainizi, $datafin, $desc['anomalia'], $fkpda, $desc['id_apparecchio'], $desc['fk_cliente']);
-    $sql2->execute();
-    $sql2->close();
-    $sql3->close();
-    $con->close();
 }
 ?>
 <!DOCTYPE html>
@@ -64,9 +47,15 @@ if (isset($_POST['delete'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
     <link href="../CSS/Stylesheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
     <title>GestioneTicket</title>
 </head>
 
@@ -104,97 +93,161 @@ if (isset($_POST['delete'])) {
         </div>
     </nav>
 
-    <!-- tabella IN CORSO-->
-    <h1 class="header_cronologiaticket">Ticket in Corso</h1>
-    <div class=tabella>
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID Ticket</th>
-                    <th scope="col">Nome Utente</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col">Stato</th>
-                    <th scope="col">Data Inizio</th>
-                    <th scope="col">Data Fine Prevista</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $con = Connect();
-                $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket WHERE stato='In Corso';");
-                $sql->execute();
-                $result = $sql->get_result();
-                $sql->close();
-                $sql1 = $con->prepare("SELECT username FROM cliente INNER JOIN ticket ON ticket.fk_cliente=cliente.id_cliente");
-                $sql1->execute();
-                $result1 = $sql1->get_result();
-                $sql1->close();
-                do {
-                    $row = $result->fetch_assoc();
-                    $row1 = $result1->fetch_assoc();
-                    if ($row && $row1) {
-                        echo "<tr>
-                    <td>" . $row["id_ticket"] . "</td>
-                    <td>" . $row1["username"] . "</td>
-                    <td>" . $row["descrizione"] . "</td>
-                    <td>" . $row["stato"] . "</td>
-                    <td>" . $row["data_inizio"] . "</td>
-                    <td>" . $row["data_fine"] . "</td>
-                    </tr>";
-                    }
-                } while ($row && $row1);
-                ?>
-            </tbody>
-        </table>
-    </div> <br><br><br>
+    <!-- tabella Ticket-->
 
-    <!-- tabella COMPLETATO-->
-    <h1 class="header_cronologiaticket">Ticket Completati</h1>
-    <div class=tabella>
-        <table id="myTable" class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID Ticket</th>
-                    <th scope="col">Nome Utente</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col">Stato</th>
-                    <th scope="col">Data Inizio</th>
-                    <th scope="col">Data Fine</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $con = Connect();
-                $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket WHERE stato='Completato';");
-                $sql->execute();
-                $result = $sql->get_result();
-                $sql->close();
-                $sql1 = $con->prepare("SELECT username FROM cliente INNER JOIN ticket ON ticket.fk_cliente=cliente.id_cliente");
-                $sql1->execute();
-                $result1 = $sql1->get_result();
-                $sql1->close();
-                do {
-                    $row = $result->fetch_assoc();
-                    $row1 = $result1->fetch_assoc();
-                    if ($row && $row1) {
-                        echo "<tr>
-                    <td>" . $row["id_ticket"] . "</td>
-                    <td>" . $row1["username"] . "</td>
-                    <td>" . $row["descrizione"] . "</td>
-                    <td>" . $row["stato"] . "</td>
-                    <td>" . $row["data_inizio"] . "</td>
-                    <td>" . $row["data_fine"] . "</td>
-                    </tr>";
-                    }
-                } while ($row && $row1);
-                $con->close();
-                ?>
-            </tbody>
-        </table>
+
+    <div class="selctionButtons">
+        <form method="POST">
+            <h1 class="header_cronologiaticket">Seleziona una vista della Tabella:</h1>
+            <button class="buttonTicket" id="optradio1" type="submit" name="optradio1">In Corso</button>
+            <button class="buttonTicket" id="optradio2" type="submit" name="optradio2">Completati</button>
+            <button class="buttonTicket" id="optradio3" type="submit" name="optradio3">Falliti</button>
+        </form>
     </div>
+    <?php
+    if (isset($_POST["optradio1"])) {
+    ?>
+        <h1 class="header_cronologiaticket">Ticket in Corso</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Nome Utente</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Inizio</th>
+                        <th scope="col">Data Fine Prevista</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket WHERE stato='In Corso';");
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    $sql->close();
+                    $sql1 = $con->prepare("SELECT username FROM cliente INNER JOIN ticket ON ticket.fk_cliente=cliente.id_cliente");
+                    $sql1->execute();
+                    $result1 = $sql1->get_result();
+                    $sql1->close();
+                    do {
+                        $row = $result->fetch_assoc();
+                        $row1 = $result1->fetch_assoc();
+                        if ($row && $row1) {
+                            echo "<tr>
+                    <td>" . $row["id_ticket"] . "</td>
+                    <td>" . $row1["username"] . "</td>
+                    <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_inizio"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
+                    </tr>";
+                        }
+                    } while ($row && $row1);
+                    ?>
+                </tbody>
+            </table>
+        </div> <br><br><br>
+    <?php
+    } else if (isset($_POST["optradio2"])) {
+    ?>
+        <h1 class="header_cronologiaticket">Ticket Completati</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Nome Utente</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Inizio</th>
+                        <th scope="col">Data Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket WHERE stato='Completato';");
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    $sql->close();
+                    $sql1 = $con->prepare("SELECT username FROM cliente INNER JOIN ticket ON ticket.fk_cliente=cliente.id_cliente");
+                    $sql1->execute();
+                    $result1 = $sql1->get_result();
+                    $sql1->close();
+                    do {
+                        $row = $result->fetch_assoc();
+                        $row1 = $result1->fetch_assoc();
+                        if ($row && $row1) {
+                            echo "<tr>
+                    <td>" . $row["id_ticket"] . "</td>
+                    <td>" . $row1["username"] . "</td>
+                    <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_inizio"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
+                    </tr>";
+                        }
+                    } while ($row && $row1);
+                    $con->close();
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    <?php
+    } else if (isset($_POST["optradio3"])) {
+    ?>
+        <h1 class="header_cronologiaticket">Ticket Falliti</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Nome Utente</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Inizio</th>
+                        <th scope="col">Data Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket WHERE stato='Fallito';");
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    $sql->close();
+                    $sql1 = $con->prepare("SELECT username FROM cliente INNER JOIN ticket ON ticket.fk_cliente=cliente.id_cliente");
+                    $sql1->execute();
+                    $result1 = $sql1->get_result();
+                    $sql1->close();
+                    do {
+                        $row = $result->fetch_assoc();
+                        $row1 = $result1->fetch_assoc();
+                        if ($row && $row1) {
+                            echo "<tr>
+                    <td>" . $row["id_ticket"] . "</td>
+                    <td>" . $row1["username"] . "</td>
+                    <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_inizio"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
+                    </tr>";
+                        }
+                    } while ($row && $row1);
+                    $con->close();
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    <?php
+    }
 
+    ?>
     <!-- cancella ticket -->
     <div class="containereAdminTicket" id="containerCancellaTicket">
         <h3 style="color:rgb(255, 255, 255);">Cancella/Cambia Stato Ticket</h3>
@@ -222,55 +275,9 @@ if (isset($_POST['delete'])) {
         </form>
     </div>
 
-    <!-- approva ticket -->
-    <div class=tabella>
-        <table id="myTable" class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID Apparecchio</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Anomalia</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $con = Connect();
-                $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia FROM apparecchio");
-                $sql->execute();
-                $result = $sql->get_result();
-                $sql->close();
-                do {
-                    $row = $result->fetch_assoc();
-                    if ($row) {
-                        echo "<tr>
-                     <td>" . $row["id_apparecchio"] . "</td>
-                     <td>" . $row["categoria"] . "</td>
-                     <td>" . $row["anomalia"] . "</td>
-                     </tr>";
-                    }
-                } while ($row);
-                $con->close();
-                ?>
-            </tbody>
-        </table>
-    </div>
-    <br />
-    <div class="containereAdminTicket" id="containerApprovaTicket">
-        <h3 style="color:rgb(255, 255, 255);">Approva Ticket</h3>
-        <form action="" method="POST">
-            <div class="form-group">
-                <input type="number" class="form-control" placeholder="Numero Richiesta" name="idt">
-                <input type="number" class="form-control" placeholder="PDA" name="idpda">
-                <input type="date" class="form-control" placeholder="Data Inizio" name="datainizio">
-                <input type="date" class="form-control" placeholder="Data Fine" name="datafine">
-            </div>
-            <button class="buttonTicket" id="acceptTicketButton" type="submit" name="accept">Accetta Ticket</button>
-        </form>
-    </div>
-
     <!-- logout -->
     <div class="logout_text">
+        <p><b><a href="../PHP-HTML/AccettazioneTicket.php">Torna alla Pagina Accettazione Ticket</a></b></p>
         <p><b><a href="../PHP-HTML/CronologiaTicket.php">Torna ai tuoi Ticket</a></b></p>
         <p><b><a href="../PHP/Logout.php">Logout</a></b></p>
     </div>
@@ -325,7 +332,7 @@ if (isset($_POST['delete'])) {
 </body>
 <script>
     $(document).ready(function() {
-        $('myTable').DataTable();
+        $('#myTable').DataTable();
     });
 </script>
 
