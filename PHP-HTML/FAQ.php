@@ -1,5 +1,7 @@
 <?php
 $page = $_GET["id"];
+session_start();
+require '../PHP/DBConfig.php';
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +73,9 @@ $page = $_GET["id"];
                     <div class="row">
                         <div class="col-sm-4 col-lg-3">
                             <h3 class="title-block first-child">Ricerca</h3>
-                            <form role="form">
+                            <form method="GET" action="FAQ.php?id=4" role="form">
                                 <label for="search" class="sr-only">Search</label>
-                                <input type="search" class="form-control" id="search" placeholder="Cerca qui...">
+                                <input type="search" class="form-control" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" placeholder="Cerca qui...">
                             </form>
                             <h3 class="title-block mt-3">Link importanti</h3>
                             <div class="menu-lg">
@@ -100,7 +102,8 @@ $page = $_GET["id"];
                         <?php
                         switch ($page) {
                             case 1:
-                        ?>
+                        ?> 
+                                              
                                 <div class="col-lg-9 col-sm-8">
                                     <h3 class="title-block second-child">Domande e Risposte</h3>
                                     <div class="panel-group" id="faqList">
@@ -108,13 +111,27 @@ $page = $_GET["id"];
                                             <div class="panel-heading">
                                                 <h4 class="panel-title p-3 border rounded">
                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionOne" class="collapsed">
-                                                        Smartphone non si accende.
+                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='1'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                    ?>                          
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Collega il caricabatterie e aspetta qualche ora. Se il dispositivo continua a non accendersi inviaci un ticket!</p>
+                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='1'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                    ?>   </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,13 +139,27 @@ $page = $_GET["id"];
                                             <div class="panel-heading">
                                                 <h4 class="panel-title p-3 border rounded">
                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionTwo" class="collapsed">
-                                                        Batteria gonfia.
+                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='2'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                    ?>        
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Spegnere immediatamente il telefono e aspettare che perda la carica per sostituire la batteria. Puoi venire a comprarla in uno dei nostri punti vendita!</p>
+                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='2'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                    ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,13 +167,27 @@ $page = $_GET["id"];
                                             <div class="panel-heading">
                                                 <h4 class="panel-title p-3 border rounded">
                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionThree" class="collapsed">
-                                                        Schermo nero.
+                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='3'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                    ?>       
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Effettua un avvio forzato e prova a eliminare delle app incompatibili</p>
+                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='3'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                    ?>     </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,13 +195,27 @@ $page = $_GET["id"];
                                             <div class="panel-heading">
                                                 <h4 class="panel-title p-3 border rounded">
                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFour" class="">
-                                                        Telefono non si carica.
+                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='4'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                    ?>
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Prova a riavviare il telefono, a caricare il telefono in modalità provvisoria o a cambiare il cavo del telefono</p>
+                                                    <p class="p-0 m-0"> <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='4'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                    ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -164,16 +223,32 @@ $page = $_GET["id"];
                                             <div class="panel-heading">
                                                 <h4 class="panel-title p-3 border rounded">
                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFive" class="">
-                                                        Telefono rotto.
+                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='5'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                    ?>
                                                     </a>
                                                 </h4>
                                             </div>
                                             <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                 <div class="panel-body border p-3">
-                                                    <p class="p-0 m-0">Crea un ticket o compra un nuovo telefono nei nostri negozi</p>
+                                                    <p class="p-0 m-0"> <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='5'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                    ?></p>
                                                 </div>
                                             </div>
                                         </div>
+
+                        
                                     <?php
                                     break;
                                 case 2:
@@ -185,13 +260,27 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#questionOne" class="collapsed">
-                                                                TV non si accende.
+                                                            <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='6'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Prova ad accendere la televisione in modalità standby</p>
+                                                            <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='6'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -199,13 +288,27 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#questionTwo" class="collapsed">
-                                                                TV fa fumo.
+                                                            <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='7'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Spegni immediatamente la televisione e mandaci un ticket</p>
+                                                            <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='7'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -213,13 +316,27 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#questionThree" class="collapsed">
-                                                                Schermo nero.
+                                                            <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='8'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Prova a cambiare il canale di ingresso della televisione</p>
+                                                            <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='8'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -227,13 +344,27 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#collapseFour" class="">
-                                                                Smart TV non si connette.
+                                                            <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='9'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Riavvia la TV o controlla lo stato della rete </p>
+                                                            <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='9'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?> </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -241,13 +372,27 @@ $page = $_GET["id"];
                                                     <div class="panel-heading">
                                                         <h4 class="panel-title p-3 border rounded">
                                                             <a data-toggle="collapse" data-parent="#faqList" href="#collapseFive" class="">
-                                                                TV rotta.
+                                                            <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='10'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                             </a>
                                                         </h4>
                                                     </div>
                                                     <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                         <div class="panel-body border p-3">
-                                                            <p class="p-0 m-0">Apri un ticket!</p>
+                                                            <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='10'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,13 +407,27 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionOne" class="collapsed">
-                                                                        Come inviare un ticket
+                                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='11'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Vai in "Invia ticket" e compila il form!</p>
+                                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='11'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -276,13 +435,27 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionTwo" class="collapsed">
-                                                                        Cosa fare dopo aver inviato il ticket
+                                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='12'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionTwo" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Porta il dispositivo danneggiato al PDA più vicino.</p>
+                                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='12'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -290,13 +463,27 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#questionThree" class="collapsed">
-                                                                        Come funziona dopo?
+                                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='13'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="questionThree" class="panel-collapse collapse" style="height: 0px;">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Una volta consegnato il dispositivo ce ne occuperemo noi. Puoi tornare a casa tranquillo!</p>
+                                                                    <p class="p-0 m-0"> <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='13'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -304,13 +491,26 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFour" class="">
-                                                                        Quando saprò che il dispositivo è pronto?
-                                                                    </a>
+                                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='14'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                                 </h4>
                                                             </div>
                                                             <div id="collapseFour" class="panel-collapse collapse in" style="">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">In "Miei ticket" sarà disponibile il tempo previsto al completamento della riparazione</p>
+                                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='14'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -318,13 +518,76 @@ $page = $_GET["id"];
                                                             <div class="panel-heading">
                                                                 <h4 class="panel-title p-3 border rounded">
                                                                     <a data-toggle="collapse" data-parent="#faqList" href="#collapseFive" class="">
-                                                                        Quando avviene il pagamento?
+                                                                    <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='15'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
                                                                     </a>
                                                                 </h4>
                                                             </div>
                                                             <div id="collapseFive" class="panel-collapse collapse in" style="">
                                                                 <div class="panel-body border p-3">
-                                                                    <p class="p-0 m-0">Il pagamento avviene alla riconsegna. In caso di mancata riparazione non ti faremo pagare nulla!</p>
+                                                                    <p class="p-0 m-0"> <?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='15'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            <?php
+                                                    break;
+                                                    case 4:
+                                            ?>
+                                                <div class="col-lg-9 col-sm-8">
+                                                    <h3 class="title-block second-child">Domande e Risposte</h3>
+                                                    <div class="panel-group" id="faqList">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title p-3 border rounded">
+                                                                    <a data-toggle="collapse" data-parent="#faqList" href="#questionOne" class="collapsed">
+                                                                    <?php
+                                                        $conn = Connect();
+                                                       // get the search terms from the url
+                                                        $k = isset($_GET['k']) ? $_GET['k'] : '';
+
+                                                        // create the base variables for building the search query
+                                                        $search_string = "SELECT * FROM faq WHERE ";
+                                                        $display_words = "";
+					
+                                                        // format each of search keywords into the db query to be run
+                                                        $keywords = explode(' ', $k);			
+                                                        foreach ($keywords as $word){
+                                                        	$search_string .= "Domanda LIKE '%".$word."%' OR ";
+                                                        	$display_words .= $word.' ';
+                                                        }
+                                                        $search_string = substr($search_string, 0, strlen($search_string)-4);
+                                                        $display_words = substr($display_words, 0, strlen($display_words)-1);
+                                                        $query = mysqli_query($conn, $search_string);
+                                                        $row = mysqli_fetch_assoc($query);
+                                                        echo($row['Domanda']);
+                                                        $conn->close();                                                                               
+                                                            ?>
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="questionOne" class="panel-collapse collapse" style="height: 0px;">
+                                                                <div class="panel-body border p-3">
+                                                                    <p class="p-0 m-0"><?php
+                                                        $conn = Connect();
+                                                        $query11 = "SELECT * FROM faq WHERE id_faq='11'";
+                                                        $result = mysqli_query($conn, $query11);
+                                                        $row = mysqli_fetch_array($result);
+                                                        echo($row['Risposta']);
+                                                        $conn->close();                                                                               
+                                                            ?></p>
                                                                 </div>
                                                             </div>
                                                         </div>
