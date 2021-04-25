@@ -10,6 +10,7 @@
     bottom: 0;
 } */
 
+
 .login-box {
     width: 100%;
     border-radius: 40px;
@@ -47,6 +48,8 @@
 .login-snip .sign-up,
 .login-space .group .check {
     display: none
+																				  
+			   
 }
 
 .login-snip .tab,
@@ -186,8 +189,7 @@
 .clearfix:after {
     clear: both;
     display: block
-}
-
+}				 
 #containerRegister {
     text-align: center;
     width: 920px;
@@ -278,8 +280,7 @@ p {
     width: 450px;
     left: 220px;
     top:-530px;
-}
-
+}					   
 #creaticket {
     position: relative;
     margin: auto;
@@ -300,43 +301,6 @@ p {
     border: 2px solid rgb(16, 69, 184);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     opacity: 1;
-}
-
-h1 {
-    text-align: center;
-}
-
-#piechart {
-    background-color: none;
-    top: 130px;
-    right: -900px;
-    position:relative;
-}
-
-#graph2 {
-    background-color: none;
-    margin-left: 0px;
-    position: relative;
-}
-
-#colonne {
-    top: -300px;
-    right: -100px;
-    position:relative;
-    max-width: 900px;
-    max-height: 700px;
-}
-#graph3 {
-    background-color:none;
-    margin-left: 0px;
-    top: -100px;
-    right: -400px;
-    position:relative;
-}
-
-#mychart {
-    max-width: 900px;
-    max-height: 700px;
 }
 
 .site-footer {
@@ -685,6 +649,7 @@ a:hover {
     margin-top: 150px;
     padding-bottom: 30px;
 }
+
 .descrizionesito h1 {
     font-weight: bold;
     margin-bottom: 40px;
@@ -692,6 +657,7 @@ a:hover {
     color: inherit;
     font-size: 30px;
 }
+
 @media (max-width:767px) {
     .descrizionesito h1 {
         margin-bottom: 25px;
@@ -699,6 +665,7 @@ a:hover {
         font-size: 24px;
     }
 }
+
 .descrizionesito p {
     color: #7d8285;
 } */
