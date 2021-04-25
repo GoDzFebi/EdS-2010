@@ -12,8 +12,13 @@ if (!isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link href="../CSS/Stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
     <title>CronologiaTicket</title>
 </head>
 
@@ -51,84 +56,141 @@ if (!isset($_SESSION['id'])) {
         </div>
     </nav>
 
-    <!-- tabella IN CORSO-->
-    <h1 class="header_cronologiaticket">Ticket in Corso</h1>
-    <div class=tabella>
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col">Stato</th>
-                    <th scope="col">Data Fine Prevista</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $con = Connect();
-                $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='In Corso' AND ticket.fk_cliente=?;");
-                $sql->bind_param("i", $id);
-                $sql->execute();
-                $result = $sql->get_result();
-                do {
-                    $row = $result->fetch_assoc();
-                    if ($row) {
-                        echo "<tr>
+    <div class="selctionButtons">
+        <form method="POST">
+            <h1 class="header_cronologiaticket">Seleziona una vista della Tabella:</h1>
+            <button class="buttonTicket" id="optradio1" type="submit" name="optradio1">In Corso</button>
+            <button class="buttonTicket" id="optradio2" type="submit" name="optradio2">Completati</button>
+            <button class="buttonTicket" id="optradio3" type="submit" name="optradio3">Falliti</button>
+        </form>
+    </div>
+    <?php
+    if (isset($_POST["optradio1"])) {
+    ?>
+        <!-- tabella IN CORSO-->
+        <h1 class="header_cronologiaticket">Ticket in Corso</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Fine Prevista</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='In Corso' AND ticket.fk_cliente=?;");
+                    $sql->bind_param("i", $id);
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    do {
+                        $row = $result->fetch_assoc();
+                        if ($row) {
+                            echo "<tr>
                     <td>" . $row["id_ticket"] . "</td>
                     <td>" . $row["descrizione"] . "</td>
                     <td>" . $row["stato"] . "</td>
                     <td>" . $row["data_fine"] . "</td>
                     </tr>";
-                    }
-                } while ($row);
-                ?>
-            </tbody>
-        </table>
-    </div> <br><br><br>
-
-    <!-- tabella COMPLETATO -->
-    <h1 class="header_cronologiaticket">Ticket Completati</h1>
-    <div class=tabella>
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col">Stato</th>
-                    <th scope="col">Data Inizio</th>
-                    <th scope="col">Data Fine</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $con = Connect();
-                $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='Completato' AND ticket.fk_cliente=?;");
-                $sql->bind_param("i", $id);
-                $sql->execute();
-                $result = $sql->get_result();
-                do {
-                    $row = $result->fetch_assoc();
-                    if ($row) {
-                        echo "<tr>
+                        }
+                    } while ($row);
+                    ?>
+                </tbody>
+            </table>
+        </div> <br><br><br>
+    <?php
+    } else if (isset($_POST["optradio2"])) {
+    ?>
+        <!-- tabella COMPLETATO -->
+        <h1 class="header_cronologiaticket">Ticket Completati</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Inizio</th>
+                        <th scope="col">Data Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='Completato' AND ticket.fk_cliente=?;");
+                    $sql->bind_param("i", $id);
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    do {
+                        $row = $result->fetch_assoc();
+                        if ($row) {
+                            echo "<tr>
                     <td>" . $row["id_ticket"] . "</td>
                     <td>" . $row["descrizione"] . "</td>
                     <td>" . $row["stato"] . "</td>
                     <td>" . $row["data_inizio"] . "</td>
                     <td>" . $row["data_fine"] . "</td>
                     </tr>";
-                    }
-                } while ($row);
-                ?>
-            </tbody>
-        </table>
-    </div>
-    <div class="logout_text">
+                        }
+                    } while ($row);
+                    ?>
+                </tbody>
+            </table>
+        </div>
     <?php
-        if($_SESSION["tipo"]==1){
+    } else if (isset($_POST["optradio3"])) {
+    ?>
+    <!-- tabella FALLITO -->
+    <h1 class="header_cronologiaticket">Ticket Falliti</h1>
+        <div class=tabella>
+            <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Stato</th>
+                        <th scope="col">Data Inizio</th>
+                        <th scope="col">Data Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $con = Connect();
+                    $id = $_SESSION['id'];
+                    $sql = $con->prepare("SELECT id_ticket, descrizione, stato, data_fine, data_inizio FROM ticket INNER JOIN cliente ON ticket.fk_cliente=cliente.id_cliente WHERE ticket.stato='Fallito' AND ticket.fk_cliente=?;");
+                    $sql->bind_param("i", $id);
+                    $sql->execute();
+                    $result = $sql->get_result();
+                    do {
+                        $row = $result->fetch_assoc();
+                        if ($row) {
+                            echo "<tr>
+                    <td>" . $row["id_ticket"] . "</td>
+                    <td>" . $row["descrizione"] . "</td>
+                    <td>" . $row["stato"] . "</td>
+                    <td>" . $row["data_inizio"] . "</td>
+                    <td>" . $row["data_fine"] . "</td>
+                    </tr>";
+                        }
+                    } while ($row);
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    <?php
+    }
+    ?>
+
+    <div class="logout_text">
+        <?php
+        if ($_SESSION["tipo"] == 1) {
         ?>
-        <p><b><a href="../PHP-HTML/GestioneTicket.php">Pagina Admin</a></b></p>
+            <p><b><a href="../PHP-HTML/GestioneTicket.php">Pagina Admin</a></b></p>
         <?php
         };
         ?>
@@ -184,5 +246,10 @@ if (!isset($_SESSION['id'])) {
         </div>
     </footer>
 </body>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
 
 </html>

@@ -73,8 +73,8 @@ if(isset($_SESSION['id'])){
     <div class="form-group" id="insertTicket">
       <select type="text" class="form-control" placeholder="garanzia" name="garanzia">
       <option>garanzia</option>
-      <option value="Si">Si</option>
-      <option value="No">No</option>
+      <option value="1">Si</option>
+      <option value="0">No</option>
       </select>
     </div> 
     <div class="form-group" id="insertTicket">
