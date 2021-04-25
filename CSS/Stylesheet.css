@@ -10,40 +10,186 @@
     bottom: 0;
 } */
 
-#containerLogin {
-    text-align: center;
-    width: 400px;
-    height: 480px;
-    padding-top: 35px;
-    margin: auto;
-    margin-top: 200px;
-    background-color: rgb(29, 28, 28);
-    border-radius: 20px;
+
+.login-box {
+    width: 100%;
+    border-radius: 40px;
+    margin-top: 150px;
+    margin-left: 200px;
+    max-width: 525px;
+    min-height: 730px;
+    position: relative;
+    background-color: black;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19)
 }
 
-.form-group {
-    margin: auto;
-    padding: 40px;
-    width: 370px;
+.login-snip {
+    width: 100%;
+    border-radius: 40px;
+    height: 100%;
+    position: relative;
+    padding: 50px 70px 50px 70px;
+    background: rgba(0, 0, 0, 0.9)
 }
 
-#loginButton {
-    font-size: 24px;
-    border-radius: 12px;
-    border: 2px solid rgb(13, 47, 197);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    opacity: 0.6;
-    font-family: Arial, Helvetica, sans-serif;
+.login-snip .login,
+.login-snip .sign-up-form {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear
 }
 
-#loginButton:hover {
-    font-size: 24px;
-    border-radius: 12px;
-    border: 2px solid rgb(16, 69, 184);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    opacity: 1;
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check {
+    display: none
+																				  
+			   
 }
 
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button {
+    text-transform: uppercase
+}
+
+.login-snip .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent
+}
+
+.login-snip .sign-in:checked+.tab,
+.login-snip .sign-up:checked+.tab {
+    color: #fff;
+    border-color: #1161ee
+}
+
+.row {
+    width:100%;
+}
+
+.login-space {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d
+}
+
+.login-space .group {
+    margin-bottom: 10px
+}
+
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-space .group .input,
+.login-space .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group input[data-type="password"] {
+    
+    -webkit-text-security: circle
+}
+
+.login-space .group .label {
+    color: #aaa;
+    font-size: 12px
+}
+
+.login-space .group .button {
+    background: #1161ee
+}
+
+.login-space .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1)
+}
+
+.login-space .group label .icon:before,
+.login-space .group label .icon:after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: all .2s ease-in-out 0s
+}
+
+.login-space .group label .icon:before {
+    left: 3px;
+    width: 5px;
+    bottom: 6px;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group label .icon:after {
+    top: 6px;
+    right: 0;
+    transform: scale(0) rotate(0)
+}
+
+.login-space .group .check:checked+label {
+    color: #fff
+}
+
+.login-space .group .check:checked+label .icon {
+    background: #1161ee
+}
+
+.login-space .group .check:checked+label .icon:before {
+    transform: scale(1) rotate(45deg)
+}
+
+.login-space .group .check:checked+label .icon:after {
+    transform: scale(1) rotate(-45deg)
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+    transform: rotate(0)
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+    transform: rotate(0)
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box
+}
+
+.clearfix:after,
+.clearfix:before {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both;
+    display: block
+}				 
 #containerRegister {
     text-align: center;
     width: 920px;
@@ -110,7 +256,7 @@ p {
 #ticket {
     text-align: center;
     width: 960px;
-    height: 710px;
+    height: 620px;
     padding-top: 30px;
     margin: auto;
     margin-top: 50px;
@@ -127,13 +273,21 @@ p {
     right: 250px;
 }
 
+#insertTicketAnomalia {
+    position: relative;
+    margin: auto;
+    padding: 25px;
+    width: 450px;
+    left: 220px;
+    top:-530px;
+}					   
 #creaticket {
     position: relative;
     margin: auto;
     padding: 40px;
     width: 350px;
     left: 210px;
-    bottom: 400px;
+    bottom: 500px;
     border-radius: 20px;
     font-size: 24px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
