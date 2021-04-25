@@ -1,7 +1,7 @@
 <?php
 function Connect()
 {
-    $servername = "localhost";
+    $servername = "127.0.0.1";
     $username = "Eds2010";
     $password = "password123";
     $dbname = "eds-2010";
