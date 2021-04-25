@@ -38,6 +38,14 @@ if (isset($_POST['delete'])) {
     $sql2->execute();
     $sql2->close();
     $con->close();
+}else if (isset($_POST['statusFallito'])) {
+    $con = Connect();
+    $idt = $_POST['idt'];
+    $sql2 = $con->prepare("UPDATE ticket SET stato='Fallito' WHERE id_ticket=?");
+    $sql2->bind_param('i', $idt);
+    $sql2->execute();
+    $sql2->close();
+    $con->close();
 }
 ?>
 <!DOCTYPE html>
@@ -112,7 +120,7 @@ if (isset($_POST['delete'])) {
             <table id="myTable" class="table table-striped table-bordered" style="width:100%">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Numero Ticket</th>
                         <th scope="col">Nome Utente</th>
                         <th scope="col">Descrizione</th>
                         <th scope="col">Stato</th>
@@ -158,7 +166,7 @@ if (isset($_POST['delete'])) {
             <table id="myTable" class="table table-striped table-bordered" style="width:100%">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Numero Ticket</th>
                         <th scope="col">Nome Utente</th>
                         <th scope="col">Descrizione</th>
                         <th scope="col">Stato</th>
@@ -205,7 +213,7 @@ if (isset($_POST['delete'])) {
             <table id="myTable" class="table table-striped table-bordered" style="width:100%">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID Ticket</th>
+                        <th scope="col">Numero Ticket</th>
                         <th scope="col">Nome Utente</th>
                         <th scope="col">Descrizione</th>
                         <th scope="col">Stato</th>
@@ -259,6 +267,7 @@ if (isset($_POST['delete'])) {
             <br /><br />
             <button class="buttonTicket" id="incorsoTicketButton" type="submit" name="statusInCorso">Ticket In Corso</button>
             <button class="buttonTicket" id="completatoTicketButton" type="submit" name="statusCompletato">Ticket Completato</button>
+            <button class="buttonTicket" id="fallitoTicketButton" type="submit" name="statusFallito">Ticket Fallito</button>
         </form>
     </div>
 

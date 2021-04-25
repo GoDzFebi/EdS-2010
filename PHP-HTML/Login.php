@@ -46,7 +46,7 @@ require '../PHP/Login.php';
     </div>
   </nav>
 
-<div  id="containerLogin">
+<!-- <div  id="containerLogin">
   <h3 style="color:rgb(255, 255, 255);">Accedi</h3>
   <form action="" method="POST">
     <div class="form-group">
@@ -58,8 +58,38 @@ require '../PHP/Login.php';
     <button id="loginButton" type="submit" name="submit">Accedi</button>
     <p><b><a id="register" href="Registrazione.php">Non hai un account? Registrati</a></b></p>
  </form>
-</div>
+</div> -->
 
+<div class="row">
+ <div class="col-md-6 mx-auto p-10">
+   <div class="login-box">
+    <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="login-space">
+      <div class="login">
+      <form action="" method="POST">
+      <div class="group"><label class="label">Username</label> <input id="user" type="text" class="input" placeholder="Username" name="user"> </div>
+      <div class="group"><label class="label">Password</label> <input id="pwd" type="password" class="input" placeholder="Password" name="pwd"> </div>
+      <div class="group"> <input type="submit" class="button" value="Accedi" name="submit"> </div>
+      </form>
+    </div>
+    <div class="sign-up-form">
+    <form action="../PHP/Register.php" method="POST">
+      <div class="group"> <label class="label">Nome</label> <input type="text" class="input" placeholder="Nome" nome="nome"> </div>
+      <div class="group"> <label class="label">Cognome</label> <input type="text" class="input" placeholder="Cognome" nome="cognome"> </div>
+      <div class="group"> <label class="label">Username</label> <input type="text" class="input" placeholder="Username" nome="usr"> </div>
+      <div class="group"> <label class="label">Password</label> <input type="password" class="input" placeholder="Password" nome="pwd"> </div>
+      <div class="group"> <label class="label">Email</label> <input type="text" class="input" placeholder="Email*" nome="mail"> </div>
+      <div class="group"> <label class="label">Telefono</label> <input type="text" class="input" placeholder="Telefono*" nome="telefono"> </div>
+      <div class="group"> <input type="submit" class="button" value="Registrati"> </div>
+    </form>
+    </div>
+    </div>
+    </div>
+   </div>
+ </div>
+</div>
+      
+        
 <!-- <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -67,7 +97,6 @@ require '../PHP/Login.php';
             <h6>About</h6>
             <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
           </div>
-
           <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul class="footer-links">
@@ -79,7 +108,6 @@ require '../PHP/Login.php';
               <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
             </ul>
           </div>
-
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
@@ -100,7 +128,6 @@ require '../PHP/Login.php';
          <a href="#">Scanfcode</a>.
             </p>
           </div>
-
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
