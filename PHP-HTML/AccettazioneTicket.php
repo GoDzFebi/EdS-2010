@@ -11,20 +11,20 @@ if (isset($_POST['accept'])) {
     $datainizi = $_POST['datainizio'];
     $datafin = $_POST['datafine'];
     $fkpda = $_POST['idpda'];
-    $sql3 = $con->prepare("SELECT id_apparecchio, anomalia, fk_cliente FROM apparecchio WHERE id_apparecchio=?");
-    $sql3->bind_param('i', $ida);
-    $sql3->execute();
-    $res = $sql3->get_result();
+
+    $sql = $con->prepare("SELECT id_apparecchio, anomalia, fk_cliente FROM apparecchio WHERE id_apparecchio=?");
+    $sql->bind_param('i', $ida);
+    $sql->execute();
+    $res = $sql->get_result();
     $desc = $res->fetch_assoc();
+
     $sql2 = $con->prepare("INSERT INTO ticket (data_inizio, data_fine, stato, descrizione, fk_pda, fk_apparecchio, fk_cliente) VALUES (?,?,'In Corso',?,?,?,?)");
     $sql2->bind_param('sssiii', $datainizi, $datafin, $desc['anomalia'], $fkpda, $desc['id_apparecchio'], $desc['fk_cliente']);
     $sql2->execute();
-    $sql2->close();
-    $sql3->close();
-    $sql4 = $con->prepare("DELETE FROM apparecchio WHERE id_apparecchio=?");
-    $sql4->bind_param('i', $ida);
-    $sql4->execute();
-    $sql4->close();
+
+    $sql3 = $con->prepare("UPDATE apparecchio SET is_accettato=1 WHERE id_apparecchio=?");
+    $sql3->bind_param('i', $ida);
+    $sql3->execute();
     $con->close();
 }
 ?>
@@ -79,11 +79,22 @@ if (isset($_POST['accept'])) {
     </nav>
 
     <!-- approva ticket -->
+    <div class="selctionButtons">
+        <form method="POST">
+            <h1 class="header_cronologiaticket">Seleziona una vista della Tabella:</h1>
+            <button class="buttonTicket" id="optradio1" type="submit" name="optradio1">Non Accettati</button>
+            <button class="buttonTicket" id="optradio2" type="submit" name="optradio2">Accettati</button>
+        </form>
+    </div>
+    <?php
+    if (isset($_POST["optradio1"])) {
+    ?>
     <div class=tabella>
         <table id="myTable" class="table table-striped table-bordered" style="width:100%">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID Apparecchio</th>
+                    <th scope="col">Marca</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Anomalia</th>
                 </tr>
@@ -92,7 +103,7 @@ if (isset($_POST['accept'])) {
                 <?php
                 $con = Connect();
                 $id = $_SESSION['id'];
-                $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia FROM apparecchio");
+                $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia, marca FROM apparecchio WHERE is_accettato=0");
                 $sql->execute();
                 $result = $sql->get_result();
                 $sql->close();
@@ -101,6 +112,7 @@ if (isset($_POST['accept'])) {
                     if ($row) {
                         echo "<tr>
                      <td>" . $row["id_apparecchio"] . "</td>
+                     <td>" . $row["marca"] . "</td>
                      <td>" . $row["categoria"] . "</td>
                      <td>" . $row["anomalia"] . "</td>
                      </tr>";
@@ -111,6 +123,46 @@ if (isset($_POST['accept'])) {
             </tbody>
         </table>
     </div>
+    <?php
+    } else if (isset($_POST["optradio2"])) {
+    ?>
+     <div class=tabella>
+        <table id="myTable" class="table table-striped table-bordered" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID Apparecchio</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Anomalia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $con = Connect();
+                $id = $_SESSION['id'];
+                $sql = $con->prepare("SELECT id_apparecchio, categoria, anomalia, marca FROM apparecchio WHERE is_accettato=1");
+                $sql->execute();
+                $result = $sql->get_result();
+                $sql->close();
+                do {
+                    $row = $result->fetch_assoc();
+                    if ($row) {
+                        echo "<tr>
+                     <td>" . $row["id_apparecchio"] . "</td>
+                     <td>" . $row["marca"] . "</td>
+                     <td>" . $row["categoria"] . "</td>
+                     <td>" . $row["anomalia"] . "</td>
+                     </tr>";
+                    }
+                } while ($row);
+                $con->close();
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <?php
+    }
+    ?>
     <br />
     <div class="containereAdminTicket" id="containerApprovaTicket">
         <h3 style="color:rgb(255, 255, 255);">Approva Ticket</h3>
