@@ -65,16 +65,13 @@ if(isset($_SESSION['id'])){
       <input type="text" class="form-control" placeholder="numero serie" name="numero_serie">
     </div>
     <div class="form-group" id="insertTicket">
-      <input type="text" class="form-control" placeholder="anomalia" name="anomalia">
-    </div>
-    <div class="form-group" id="insertTicket">
       <input type="text" class="form-control" placeholder="categoria" name="categoria">
     </div>
     <div class="form-group" id="insertTicket">
       <select type="text" class="form-control" placeholder="garanzia" name="garanzia">
       <option>garanzia</option>
-      <option value="1">Si</option>
-      <option value="0">No</option>
+      <option value="Si">Si</option>
+      <option value="No">No</option>
       </select>
     </div> 
     <div class="form-group" id="insertTicket">
@@ -83,6 +80,9 @@ if(isset($_SESSION['id'])){
       <option value="1">Telefono</option>
       <option value="2">Televisore</option>
       </select>
+    </div>
+    <div class="form-group" id="insertTicketAnomalia">
+      <textarea rows="10" cols="60" type="text" class="form-control" placeholder="anomalia" name="anomalia" style="height: 300px;"></textarea>
     </div>
     <button id="creaticket" type="submit" name="submit">Crea</button>
  </form>
