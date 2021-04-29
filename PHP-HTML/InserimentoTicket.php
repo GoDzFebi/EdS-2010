@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "../PHP/DBConfig.php";
+$value=$_GET["value"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,13 +66,13 @@ if(isset($_SESSION['id'])){
       <input type="text" class="form-control" placeholder="numero serie" name="numero_serie">
     </div>
     <div class="form-group" id="insertTicket">
-      <input type="text" class="form-control" placeholder="categoria" name="categoria">
+      <input type="text" class="form-control" placeholder="categoria" name="categoria" value="<?php echo($value) ?>" >
     </div>
     <div class="form-group" id="insertTicket">
       <select type="text" class="form-control" placeholder="garanzia" name="garanzia">
       <option>garanzia</option>
-      <option value="Si">Si</option>
-      <option value="No">No</option>
+      <option value="1">Si</option>
+      <option value="0">No</option>
       </select>
     </div> 
     <div class="form-group" id="insertTicket">

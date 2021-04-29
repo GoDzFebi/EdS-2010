@@ -88,7 +88,7 @@ if (isset($_POST['delete'])) {
                         <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+                        <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php?value=">Crea Ticket</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>

@@ -36,7 +36,7 @@ require '../PHP/Login.php';
             <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php?value=">Crea Ticket</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../PHP-HTML/FAQ.php?id=0">FAQ</a>
@@ -74,12 +74,12 @@ require '../PHP/Login.php';
     </div>
     <div class="sign-up-form">
     <form action="../PHP/Register.php" method="POST">
-      <div class="group"> <label class="label">Nome</label> <input type="text" class="input" placeholder="Nome" nome="nome"> </div>
-      <div class="group"> <label class="label">Cognome</label> <input type="text" class="input" placeholder="Cognome" nome="cognome"> </div>
-      <div class="group"> <label class="label">Username</label> <input type="text" class="input" placeholder="Username" nome="usr"> </div>
-      <div class="group"> <label class="label">Password</label> <input type="password" class="input" placeholder="Password" nome="pwd"> </div>
-      <div class="group"> <label class="label">Email</label> <input type="text" class="input" placeholder="Email*" nome="mail"> </div>
-      <div class="group"> <label class="label">Telefono</label> <input type="text" class="input" placeholder="Telefono*" nome="telefono"> </div>
+      <div class="group"> <label class="label">Nome</label> <input type="text" class="input" placeholder="Nome" name="nome"> </div>
+      <div class="group"> <label class="label">Cognome</label> <input type="text" class="input" placeholder="Cognome" name="cognome"> </div>
+      <div class="group"> <label class="label">Username</label> <input type="text" class="input" placeholder="Username" name="usr"> </div>
+      <div class="group"> <label class="label">Password</label> <input type="password" class="input" placeholder="Password" name="pwd"> </div>
+      <div class="group"> <label class="label">Email</label> <input type="text" class="input" placeholder="Email*" name="mail"> </div>
+      <div class="group"> <label class="label">Telefono</label> <input type="text" class="input" placeholder="Telefono*" name="telefono"> </div>
       <div class="group"> <input type="submit" class="button" value="Registrati"> </div>
     </form>
     </div>
