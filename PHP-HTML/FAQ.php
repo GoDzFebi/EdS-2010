@@ -45,7 +45,7 @@ require '../PHP/DBConfig.php';
                         <a class="nav-link" href="../PHP-HTML/CronologiaTicket.php">Miei Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+                        <a class="nav-link" href="../PHP-HTML/InserimentoTicket.php?value=">Crea Ticket</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../PHP-HTML/Login.php">Login</a>
@@ -71,12 +71,7 @@ require '../PHP/DBConfig.php';
             <div class="col-lg-12 mt-5">
                 <div class="container bootstrap snippet">
                     <div class="row">
-                        <div class="col-sm-4 col-lg-3">
-                            <h3 class="title-block first-child">Ricerca</h3>
-                            <form method="GET" action="FAQ.php?id=4" role="form">
-                                <label for="search" class="sr-only">Search</label>
-                                <input type="search" class="form-control" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>" placeholder="Cerca qui...">
-                            </form>
+                        <div class="col-sm-4 col-lg-3">                            
                             <h3 class="title-block mt-3">Link importanti</h3>
                             <div class="menu-lg">
                                 <div class="item">

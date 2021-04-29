@@ -35,7 +35,7 @@
             <a class="nav-link" href="./PHP-HTML/GestioneTicket.php">Miei Ticket</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./PHP-HTML/InserimentoTicket.php">Crea Ticket</a>
+            <a class="nav-link" href="./PHP-HTML/InserimentoTicket.php?value=">Crea Ticket</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./PHP-HTML/Login.php">Login</a>
@@ -108,27 +108,27 @@
       </div>
       <div class="row features">
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/batteriaicon.png"></img>
-          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Batteria </a></h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php?value=Batteria">Batteria </a></h3>
           <p class="description">Batteria dura poco, problemi a caricare il dispositivo, il dispositivo non si carica, batteria gonfia, batteria scalda troppo...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/chiamateicon.png"></img>
-          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Chiamate</a></h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php?value=Chiamate">Chiamate</a></h3>
           <p class="description">Durante le chiamate non si sente l'audio o il destinatario non sente, problemi ad effettuare chiamate, problemi a ricevere telefonate...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/cameraicon.png"></img>
-          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Fotocamera</a></h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php?value=Fotocamera">Fotocamera</a></h3>
           <p class="description">La fotocamera non funziona, le foto sono sfocate, le foto sono nere, la fotocamera è rotta, il flash non funziona, non si vedono foto...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/wifiicon.png"></img>
-          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Connessioni WiFi</a></h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php?value=WiFi">Connessioni WiFi</a></h3>
           <p class="description">Il dispositivo non rileva il wifi, la connessione è lenta, il dispositivo non riesce a connetersi, il dispositivo non funziona con wifi...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/appicon.png"></img>
-          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php">Applicazioni</a></h3>
+          <h3> <a class="btn" href="PHP-HTML/InserimentoTicket.php?value=Applicazioni">Applicazioni</a></h3>
           <p class="description">La app non si apre, l'app fa crashare il dispositivo, l'app non si installa, l'app blocca il telefono, l'app richiede permessi strani...</p>
         </div>
         <div class="col-sm-6 col-lg-4 item"><img class="icon" src="Image/hardwareicon.png"></img>
-          <h3><a class="btn" href="PHP-HTML/InserimentoTicket.php">Hardware</a></h3>
+          <h3><a class="btn" href="PHP-HTML/InserimentoTicket.php?value=Hardware">Hardware</a></h3>
           <p class="description">Il dispositivo ha poca ram, la gpu non regge certe applicazioni, la cpu si surriscalda troppo, problemi alla batteria, i tasti sono rotti...</p>
         </div>
       </div>

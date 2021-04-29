@@ -72,6 +72,9 @@ function InserisciTicket($marca, $modello, $numero_serie, $anomalia, $categoria,
     set_time_limit(0);
     $conn = Connect();
     $fkcliente=$_SESSION['id'];
+
+
+    
     $sql = 'INSERT INTO apparecchio ( marca, modello, numero_serie, anomalia, categoria, garanzia, tipo_apparecchio, fk_cliente) VALUES ( "' . $marca . '", "' . $modello . '", "' . $numero_serie . '", "' . $anomalia . '", "' . $categoria . '", "' . $garanzia . '", "' . $tipo_apparecchio . '", "'.$fkcliente.'")';
     if ($conn->query($sql) === TRUE) {
         echo "Nuovo ticket aggiunto";
